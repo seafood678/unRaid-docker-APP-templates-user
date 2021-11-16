@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Draw-io</Name>
+  <Repository>jgraph/drawio</Repository>
+  <Registry>https://hub.docker.com/r/jgraph/drawio</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/87798-support-selfhostersnets-template-repository/</Support>
+  <Project>https://github.com/jgraph/drawio</Project>
+  <Overview>A lightweight diagram drawing application&#xD;
+&#xD;
+&#x3010;Changing draw.io configuration&#x3011;&#xD;
+Method 1 (Build you custom image with setting pre-loaded)&#xD;
+Edit PreConfig.js &amp;amp; PostConfig.js files (next to Dockerfile in debian or alpine folders)&#xD;
+Build the docker image&#xD;
+&#xD;
+Method 2 (Using existing running docker container)&#xD;
+Edit PreConfig.js &amp;amp; PostConfig.js files (next to Dockerfile in debian or alpine folders)&#xD;
+Copy these files to docker container&#xD;
+docker cp PreConfig.js draw:/usr/local/tomcat/webapps/draw/js/&#xD;
+docker cp PostConfig.js draw:/usr/local/tomcat/webapps/draw/js/&#xD;
+&#xD;
+Method 3 (Bind configuration files into the container when started)&#xD;
+This method allows changing the configuration files directly on the host without invoking any other docker commands. It can be used for testing&#xD;
+Edit PreConfig.js &amp;amp; PostConfig.js files (next to Dockerfile in debian or alpine folders)&#xD;
+From within the directory that contained the configuration files, run the following command to start docker container&#xD;
+Note: self-contained docker-compose file already mount the configuration files into the container&#xD;
+docker run -it  --rm --name="draw" --mount type=bind,source="$(pwd)"/PreConfig.js,target=/usr/local/tomcat/webapps/draw/js/PreConfig.js --mount type=bind,source="$(pwd)"/PostConfig.js,target=/usr/local/tomcat/webapps/draw/js/PostConfig.js -p 8080:8080 -p 8443:8443 fjudith/draw.io</Overview>
+  <Category>Productivity:</Category>
+  <WebUI>http://[IP]:[PORT:3008]?offline=1&amp;amp;https=0</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/draw-io.xml</TemplateURL>
+  <Icon>http://1581088.com/uploads/flow.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset>0,1,2,3</CPUset>
+  <DateInstalled>1635141459</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>A lightweight diagram drawing application&#xD;
+&#xD;
+&#x3010;Changing draw.io configuration&#x3011;&#xD;
+Method 1 (Build you custom image with setting pre-loaded)&#xD;
+Edit PreConfig.js &amp;amp; PostConfig.js files (next to Dockerfile in debian or alpine folders)&#xD;
+Build the docker image&#xD;
+&#xD;
+Method 2 (Using existing running docker container)&#xD;
+Edit PreConfig.js &amp;amp; PostConfig.js files (next to Dockerfile in debian or alpine folders)&#xD;
+Copy these files to docker container&#xD;
+docker cp PreConfig.js draw:/usr/local/tomcat/webapps/draw/js/&#xD;
+docker cp PostConfig.js draw:/usr/local/tomcat/webapps/draw/js/&#xD;
+&#xD;
+Method 3 (Bind configuration files into the container when started)&#xD;
+This method allows changing the configuration files directly on the host without invoking any other docker commands. It can be used for testing&#xD;
+Edit PreConfig.js &amp;amp; PostConfig.js files (next to Dockerfile in debian or alpine folders)&#xD;
+From within the directory that contained the configuration files, run the following command to start docker container&#xD;
+Note: self-contained docker-compose file already mount the configuration files into the container&#xD;
+docker run -it  --rm --name="draw" --mount type=bind,source="$(pwd)"/PreConfig.js,target=/usr/local/tomcat/webapps/draw/js/PreConfig.js --mount type=bind,source="$(pwd)"/PostConfig.js,target=/usr/local/tomcat/webapps/draw/js/PostConfig.js -p 8080:8080 -p 8443:8443 fjudith/draw.io</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>3008</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>7780</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>6443</HostPort>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>3443</HostPort>
+        <ContainerPort>8443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/draw/js</HostDir>
+      <ContainerDir>/usr/local/tomcat/webapps/draw/js/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/draw/keystore</HostDir>
+      <ContainerDir>/user/local/tomcat/.keystore</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>false</Value>
+      <Name>LETS_ENCRYPT_ENABLED</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>draw.example.com</Value>
+      <Name>PUBLIC_DNS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>ORGANISATION_UNIT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>ORGANISATION</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Paris</Value>
+      <Name>CITY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Paris</Value>
+      <Name>STATE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>CN</Value>
+      <Name>COUNTRY_CODE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>V3ry1nS3cur3P4ssw0rd</Value>
+      <Name>KEYSTORE_PASS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>KEY_PASS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>LETS_ENCRYPT_ENABLED</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>PUBLIC_DNS</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+    <Variable>
+      <Value>LYG</Value>
+      <Name>ORGANISATION_UNIT</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+    <Variable>
+      <Value>LYG</Value>
+      <Name>ORGANISATION</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+    <Variable>
+      <Value>Guangzhou</Value>
+      <Name>CITY</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+    <Variable>
+      <Value>Guangdong</Value>
+      <Name>STATE</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+    <Variable>
+      <Value>CN</Value>
+      <Name>COUNTRY_CODE</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+    <Variable>
+      <Value>14.8</Value>
+      <Name>KEYSTORE_PASS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>14.8</Value>
+      <Name>KEY_PASS</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="WebUI Port" Target="8080" Default="3000" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false">3008</Config>
+  <Config Name="Pre-Post-Config.js" Target="/usr/local/tomcat/webapps/draw/js/" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /usr/local/tomcat/webapps/draw/js/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/draw/js</Config>
+  <Config Name="SSL cert" Target="/user/local/tomcat/.keystore" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /user/local/tomcat/.keystore" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/draw/keystore</Config>
+  <Config Name="LETS_ENCRYPT_ENABLED" Target="LETS_ENCRYPT_ENABLED" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: LETS_ENCRYPT_ENABLED" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="PUBLIC_DNS" Target="PUBLIC_DNS" Default="" Mode="" Description="DNS domain to be used as certificate " Type="Variable" Display="always" Required="false" Mask="false">draw.example.com</Config>
+  <Config Name="ORGANISATION_UNIT" Target="ORGANISATION_UNIT" Default="" Mode="" Description="Organisation unit to be used as certificate " Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="ORGANISATION" Target="ORGANISATION" Default="" Mode="" Description="Organisation name to be used as certificate " Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="CITY" Target="CITY" Default="" Mode="" Description="City name to be used as certificate " Type="Variable" Display="always" Required="false" Mask="false">Paris</Config>
+  <Config Name="STATE" Target="STATE" Default="" Mode="" Description="State name to be used as certificate " Type="Variable" Display="always" Required="false" Mask="false">Paris</Config>
+  <Config Name="COUNTRY_CODE" Target="COUNTRY_CODE" Default="" Mode="" Description="Country code to be used as certificate " Type="Variable" Display="always" Required="false" Mask="false">CN</Config>
+  <Config Name="KEYSTORE_PASS" Target="KEYSTORE_PASS" Default="" Mode="" Description=" " Type="Variable" Display="always" Required="false" Mask="false">V3ry1nS3cur3P4ssw0rd</Config>
+  <Config Name="KEY_PASS" Target="KEY_PASS" Default="" Mode="" Description="Private key password; default &amp;lt;ref:KEYSTORE_PASS&amp;gt;" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="port" Target="80" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 80" Type="Port" Display="always" Required="false" Mask="false">7780</Config>
+  <Config Name="port2" Target="443" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 443" Type="Port" Display="always" Required="false" Mask="false">6443</Config>
+  <Config Name="WebUI SSL Port" Target="8443" Default="3443" Mode="tcp" Description="Container Port: 8443" Type="Port" Display="advanced" Required="false" Mask="false">3443</Config>
+  <Config Name="Enable Lets Encrypt" Target="LETS_ENCRYPT_ENABLED" Default="false" Mode="{3}" Description="Enables Let's Encrypt certificate instead of self-signed certificates" Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="PUBLIC_DNS" Target="PUBLIC_DNS" Default="" Mode="{3}" Description=" DNS domain to be used as certificate " Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="ORGANISATION_UNIT" Target="ORGANISATION_UNIT" Default="" Mode="{3}" Description="Organisation unit to be used as certificate " Type="Variable" Display="advanced" Required="false" Mask="false">LYG</Config>
+  <Config Name="ORGANISATION" Target="ORGANISATION" Default="" Mode="{3}" Description="Organisation name to be used as certificate " Type="Variable" Display="advanced" Required="false" Mask="false">LYG</Config>
+  <Config Name="CITY" Target="CITY" Default="" Mode="{3}" Description="City name to be used as certificate " Type="Variable" Display="advanced" Required="false" Mask="false">Guangzhou</Config>
+  <Config Name="STATE" Target="STATE" Default="" Mode="{3}" Description=" State name to be used as certificate " Type="Variable" Display="advanced" Required="false" Mask="false">Guangdong</Config>
+  <Config Name="COUNTRY_CODE" Target="COUNTRY_CODE" Default="" Mode="{3}" Description="Country code to be used as certificate " Type="Variable" Display="advanced" Required="false" Mask="false">CN</Config>
+  <Config Name="KEYSTORE_PASS" Target="KEYSTORE_PASS" Default="" Mode="" Description="'.keystore'/.jks' store password" Type="Variable" Display="advanced" Required="true" Mask="true">14.8</Config>
+  <Config Name="KEY_PASS" Target="KEY_PASS" Default="" Mode="{3}" Description="Private key password &amp;lt;ref:KEYSTORE_PASS&amp;gt;" Type="Variable" Display="advanced" Required="true" Mask="true">14.8</Config>
+</Container>

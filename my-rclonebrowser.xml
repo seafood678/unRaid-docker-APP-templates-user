@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>rclonebrowser</Name>
+  <Repository>romancin/rclonebrowser</Repository>
+  <Registry>https://hub.docker.com/r/romancin/rclonebrowser/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/romancin/rclonebrowser/</Support>
+  <Project/>
+  <Overview>Docker container including RClone Browser with GUI interface.   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category/>
+  <WebUI>http://192.16.8.33:8008</WebUI>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/rclone.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1626711996</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Docker container including RClone Browser with GUI interface.   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8008</HostPort>
+        <ContainerPort>5800</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8009</HostPort>
+        <ContainerPort>5900</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/rclonebrowser</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/rclone-download</HostDir>
+      <ContainerDir>/media</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="port 1" Target="5800" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 5800" Type="Port" Display="always" Required="false" Mask="false">8008</Config>
+  <Config Name="port 2" Target="5900" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 5900" Type="Port" Display="always" Required="false" Mask="false">8009</Config>
+  <Config Name="config" Target="/config" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/rclonebrowser</Config>
+  <Config Name="download" Target="/media" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /media" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/rclone-download</Config>
+</Container>

@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>jellyfin</Name>
+  <Repository>linuxserver/jellyfin</Repository>
+  <Registry>https://hub.docker.com/r/linuxserver/jellyfin/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/80744-support-linuxserverio-jellyfin/</Support>
+  <Project>https://github.com/jellyfin/jellyfin#jellyfin</Project>
+  <Overview>Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.[br][br][b][u][span style='color: #E80000;']Nvidia GPU Use[/span][/u][/b][br]Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and[br] add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and[br]copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES.[/b][br][br][b][u][span style='color: #E80000;']Intel GPU Use[/span][/u][/b][br]Edit your [b]go[/b] file to include:[br][b]modprobe i915[br][/b],&#xD;
+&#xD;
+[b]edit your go file:&#xD;
+&#xD;
+#!/bin/bash&#xD;
+&#xD;
+#enable module for iGPU and perms for the render device&#xD;
+&#xD;
+modprobe i915&#xD;
+&#xD;
+chmod -R 777 /dev/dri&#xD;
+&#xD;
+# Start the Management Utility&#xD;
+&#xD;
+/usr/local/sbin/emhttp &amp;amp;&#xD;
+&#xD;
+&#xD;
+&#xD;
+syslinux.cfg:&#xD;
+&#xD;
+label unRAID OS&#xD;
+&#xD;
+menu default&#xD;
+&#xD;
+kernel /bzimage&#xD;
+&#xD;
+append pci=realloc=off initrd=/bzroot i915.alpha_support=1&#xD;
+&#xD;
+&#xD;
+&#xD;
+Extra parameters in plex docker:&#xD;
+&#xD;
+--device /dev/dri:/dev/dri&#xFEFF;[/b] &#xD;
+save and reboot, then [br]add [b]--device=/dev/dri[/b] to [b]"extra parameters"[/b] (switch on advanced view)&#xD;
+&#x5404;&#x56DE;&#x5404;&#x5BB6;&#x597D;</Overview>
+  <Category>MediaServer:Video MediaServer:Music</Category>
+  <WebUI>http://192.16.8.33:8096</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/jellyfin.xml</TemplateURL>
+  <Icon>https://pic.anxz.com/d/file/2020/08-25/3a892f648b19c3752ac7513d68964766.png</Icon>
+  <ExtraParams>--group-add=18</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1634910873</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.[br][br][b][u][span style='color: #E80000;']Nvidia GPU Use[/span][/u][/b][br]Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and[br] add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and[br]copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES.[/b][br][br][b][u][span style='color: #E80000;']Intel GPU Use[/span][/u][/b][br]Edit your [b]go[/b] file to include:[br][b]modprobe i915[br][/b],&#xD;
+&#xD;
+[b]edit your go file:&#xD;
+&#xD;
+#!/bin/bash&#xD;
+&#xD;
+#enable module for iGPU and perms for the render device&#xD;
+&#xD;
+modprobe i915&#xD;
+&#xD;
+chmod -R 777 /dev/dri&#xD;
+&#xD;
+# Start the Management Utility&#xD;
+&#xD;
+/usr/local/sbin/emhttp &amp;amp;&#xD;
+&#xD;
+&#xD;
+&#xD;
+syslinux.cfg:&#xD;
+&#xD;
+label unRAID OS&#xD;
+&#xD;
+menu default&#xD;
+&#xD;
+kernel /bzimage&#xD;
+&#xD;
+append pci=realloc=off initrd=/bzroot i915.alpha_support=1&#xD;
+&#xD;
+&#xD;
+&#xD;
+Extra parameters in plex docker:&#xD;
+&#xD;
+--device /dev/dri:/dev/dri&#xFEFF;[/b] &#xD;
+save and reboot, then [br]add [b]--device=/dev/dri[/b] to [b]"extra parameters"[/b] (switch on advanced view)&#xD;
+&#x5404;&#x56DE;&#x5404;&#x5BB6;&#x597D;</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8920</HostPort>
+        <ContainerPort>8920</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>1900</HostPort>
+        <ContainerPort>1900</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8096</HostPort>
+        <ContainerPort>8096</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/Media/Movie/</HostDir>
+      <ContainerDir>/movies</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/TVShows/</HostDir>
+      <ContainerDir>/tv</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Music/</HostDir>
+      <ContainerDir>/music</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/jellyfin/fonts/</HostDir>
+      <ContainerDir>/usr/share/fonts/truetype/dejavu</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/Kids/</HostDir>
+      <ContainerDir>/kids/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/Documents/</HostDir>
+      <ContainerDir>/document/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/Books/</HostDir>
+      <ContainerDir>/books</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/Porn/</HostDir>
+      <ContainerDir>/porn</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/Study/</HostDir>
+      <ContainerDir>/study</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/jellyfin</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value/>
+      <Name>NVIDIA_VISIBLE_DEVICES</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Webui - HTTPS" Target="8920" Default="" Mode="tcp" Description="Webui - Default 8920 (HTTPS) (Optional)" Type="Port" Display="always" Required="false" Mask="false">8920</Config>
+  <Config Name="Service Discovery" Target="1900" Default="" Mode="udp" Description="Service Discovery (Optional)" Type="Port" Display="always" Required="false" Mask="false">1900</Config>
+  <Config Name="Movies" Target="/movies" Default="" Mode="rw" Description="Movies - /movies" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media/Movie/</Config>
+  <Config Name="TV" Target="/tv" Default="" Mode="rw" Description="TV - /tv" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media/TVShows/</Config>
+  <Config Name="Music" Target="/music" Default="" Mode="rw" Description="Music -/music" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Music/</Config>
+  <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="" Mode="" Description="Nvidia Visible Devices (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="fonts" Target="/usr/share/fonts/truetype/dejavu" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /usr/share/fonts/truetype/dejavu" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/jellyfin/fonts/</Config>
+  <Config Name="Webui - HTTP" Target="8096" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: " Type="Port" Display="always" Required="false" Mask="false">8096</Config>
+  <Config Name="Kids" Target="/kids/" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /kids/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media/Kids/</Config>
+  <Config Name="documents" Target="/document/" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /document/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media/Documents/</Config>
+  <Config Name="books" Target="/books" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /books" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media/Books/</Config>
+  <Config Name="VAAPI" Target="" Default="" Mode="" Description="&#x6838;&#x663E;&#x76F4;&#x901A;" Type="Device" Display="always" Required="false" Mask="false">/dev/dri/renderD128</Config>
+  <Config Name="Porn" Target="/porn" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: " Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media/Porn/</Config>
+  <Config Name="study" Target="/study" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /study" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media/Study/</Config>
+  <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/jellyfin" Mode="rw" Description="Appdata" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/jellyfin</Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+</Container>

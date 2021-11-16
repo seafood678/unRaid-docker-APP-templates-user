@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>v2raya-Gui</Name>
+  <Repository>mzz2017/v2raya-gui</Repository>
+  <Registry>https://hub.docker.com/r/mzz2017/v2raya-gui/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/mzz2017/v2raya-gui/</Support>
+  <Project/>
+  <Overview>demo: https://v2raya.mzz.pub   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category/>
+  <WebUI>http://192.16.8.63</WebUI>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/vpn.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1636004781</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>demo: https://v2raya.mzz.pub   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>2017</HostPort>
+        <ContainerPort>2017</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/v2ray-gui/lib/modules</HostDir>
+      <ContainerDir>/lib/modules</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/v2ray-gui/config</HostDir>
+      <ContainerDir>/etc/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/v2ray-gui/</HostDir>
+      <ContainerDir>/etc/v2raya</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>0.0.0.0:2017</Value>
+      <Name>V2RAYA_ADDRESS</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="V2RAYA_ADDRESS" Target="V2RAYA_ADDRESS" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: V2RAYA_ADDRESS" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0:2017</Config>
+  <Config Name="modules" Target="/lib/modules" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /lib/modules" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/v2ray-gui/lib/modules</Config>
+  <Config Name="resolv.conf" Target="/etc/" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /etc/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/v2ray-gui/config</Config>
+  <Config Name="v2raya" Target="/etc/v2raya" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /etc/v2raya" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/v2ray-gui/</Config>
+  <Config Name="port" Target="2017" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 2017" Type="Port" Display="always" Required="false" Mask="false">2017</Config>
+</Container>

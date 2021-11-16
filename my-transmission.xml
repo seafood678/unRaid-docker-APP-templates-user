@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>transmission</Name>
+  <Repository>linuxserver/transmission</Repository>
+  <Registry>https://hub.docker.com/r/linuxserver/transmission/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/42352-support-linuxserverio-transmission/</Support>
+  <Project>http://www.transmissionbt.com/</Project>
+  <Overview>Transmission is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, &#xB5;TP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.   </Overview>
+  <Category>Downloaders:</Category>
+  <WebUI>http://[IP]:[PORT:9091]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/transmission.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/transmission-icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset>0,2,4</CPUset>
+  <DateInstalled>1636638432</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Transmission is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, &#xB5;TP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.   </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9091</HostPort>
+        <ContainerPort>9091</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>51413</HostPort>
+        <ContainerPort>51413</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/Media/</HostDir>
+      <ContainerDir>/downloads</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/.torrent/</HostDir>
+      <ContainerDir>/watch</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/transmission</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>100</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>/transmission-web-control/</Value>
+      <Name>TRANSMISSION_WEB_HOME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>ad-min@tr</Value>
+      <Name>USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>ad-min@tr</Value>
+      <Name>PASS</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Port 1" Target="9091" Default="9091" Mode="tcp" Description="Container Port: 9091" Type="Port" Display="always" Required="true" Mask="false">9091</Config>
+  <Config Name="Host Port 2" Target="51413" Default="51413" Mode="tcp" Description="Container Port: 51413" Type="Port" Display="always" Required="true" Mask="false">51413</Config>
+  <Config Name="Host Path 2" Target="/downloads" Default="" Mode="rw" Description="Container Path: /downloads" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Media/</Config>
+  <Config Name="Host Path 3" Target="/watch" Default="" Mode="rw" Description="Container Path: /watch" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Media/.torrent/</Config>
+  <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="TRANSMISSION_WEB_HOME" Target="TRANSMISSION_WEB_HOME" Default="" Mode="" Description="/combustion-release/&#13;&#10;/transmission-web-control/ &#x81EA;&#x5E26;&#x4E2D;&#x6587;&#xFF08;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF09;&#13;&#10;/kettu/&#13;&#10;/flood-for-transmission/" Type="Variable" Display="always" Required="false" Mask="false">/transmission-web-control/</Config>
+  <Config Name="USER" Target="USER" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: USER" Type="Variable" Display="always" Required="false" Mask="false">ad-min@tr</Config>
+  <Config Name="PassWord" Target="PASS" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PASS" Type="Variable" Display="always" Required="false" Mask="false">ad-min@tr</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/transmission" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/transmission</Config>
+</Container>

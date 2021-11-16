@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>jd_scripts</Name>
+  <Repository>lxk0301bak/jd_scripts</Repository>
+  <Registry>https://hub.docker.com/r/lxk0301bak/jd_scripts/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/lxk0301bak/jd_scripts/</Support>
+  <Project/>
+  <Overview>bak you know?   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://img.zcool.cn/community/0166775be41ee3a801209252b9f206.jpg@1280w_1l_2o_100sh.jpg</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1628828314</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>bak you know?   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/JD_scripts/logs</HostDir>
+      <ContainerDir>/scripts/logs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>pt_pin=jd_7df853e8e52ca;pt_key=AAJhE9okADCBAFnD1Qv6OCj48SIlqE0fAa1Sc-UU_7U-7wCq6whobaYolmyWwVt5GmGl0rqjaaw;</Value>
+      <Name>JD_COOKIE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>SCT51087TUWsjhcFzboe7b4ss5AnGHchf</Value>
+      <Name>PUSH_KEY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>jd_crazy_joy_coin.js</Value>
+      <Name>DO_NOT_RUN_SCRIPTS</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="logs" Target="/scripts/logs" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /scripts/logs" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/JD_scripts/logs</Config>
+  <Config Name="JD_COOKIE" Target="JD_COOKIE" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: JD_COOKIE" Type="Variable" Display="always" Required="false" Mask="false">pt_pin=jd_7df853e8e52ca;pt_key=AAJhE9okADCBAFnD1Qv6OCj48SIlqE0fAa1Sc-UU_7U-7wCq6whobaYolmyWwVt5GmGl0rqjaaw;</Config>
+  <Config Name="Server&#x9171;PUSH_KEY" Target="PUSH_KEY" Default="SCT51087TUWsjhcFzboe7b4ss5AnGHchf" Mode="" Description="&#x5BB9;&#x5668; Variable: PUSH_KEY" Type="Variable" Display="always" Required="false" Mask="false">SCT51087TUWsjhcFzboe7b4ss5AnGHchf</Config>
+  <Config Name="DO_NOT_RUN_SCRIPTS" Target="DO_NOT_RUN_SCRIPTS" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: DO_NOT_RUN_SCRIPTS" Type="Variable" Display="always" Required="false" Mask="false">jd_crazy_joy_coin.js</Config>
+</Container>

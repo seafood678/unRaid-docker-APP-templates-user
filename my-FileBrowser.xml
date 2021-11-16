@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Filebrowser</Name>
+  <Repository>80x86/filebrowser:2.9.0-amd64</Repository>
+  <Registry/>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>docker pull 80x86/filebrowser:2.9.0-amd64&#xD;
+&#xD;
+/dev/dri/renderD128&#xD;
+&#xD;
+</Overview>
+  <Category/>
+  <WebUI>http://192.16.8.33:8882</WebUI>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/filemanager.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1635146748</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>docker pull 80x86/filebrowser:2.9.0-amd64&#xD;
+&#xD;
+/dev/dri/renderD128&#xD;
+&#xD;
+</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8082</HostPort>
+        <ContainerPort>8082</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/FileBrowser/</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/</HostDir>
+      <ContainerDir>/myfiles</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>off</Value>
+      <Name>FB_SSL</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/FileBrowser/</Config>
+  <Config Name="myfiles" Target="/myfiles" Default="" Mode="rw" Description="Container Path: /myfiles" Type="Path" Display="always" Required="false" Mask="false">/mnt/</Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="WEB_PORT" Target="8082" Default="" Mode="tcp" Description="Container Port: 8082" Type="Port" Display="always" Required="false" Mask="false">8882</Config>
+  <Config Name="FB_SSL" Target="FB_SSL" Default="" Mode="" Description="Container Variable: FB_SSL" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
+  <Config Name="gpu" Target="" Default="" Mode="" Description="Container Device: /dev/dri" Type="Device" Display="always" Required="false" Mask="false">/dev/dri</Config>
+</Container>

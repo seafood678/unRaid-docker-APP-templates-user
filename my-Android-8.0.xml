@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Android-8.0</Name>
+  <Repository>ulisses1478/docker-android</Repository>
+  <Registry>https://registry.hub.docker.com/r/ulisses1478/docker-android</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>Android in docker solution with noVNC supported and video recording. Work way better with Intel CPUs because AMD doesn't an cpu graphics card. So with amd cpus can be unusable. </Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:56080]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Ulisses1478/templates-unraid/master/android8.xml</TemplateURL>
+  <Icon>https://duckduckgo.com/i/333122ce.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset>3,4,5</CPUset>
+  <DateInstalled>1634040352</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Android in docker solution with noVNC supported and video recording. Work way better with Intel CPUs because AMD doesn't an cpu graphics card. So with amd cpus can be unusable. </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>56080</HostPort>
+        <ContainerPort>6080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment/>
+  <Labels/>
+  <Config Name="Host Port 1" Target="6080" Default="" Mode="tcp" Description="Container Port: 6080" Type="Port" Display="always" Required="false" Mask="false">56080</Config>
+</Container>

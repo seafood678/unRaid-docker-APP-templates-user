@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>fengyunnas</Name>
+  <Repository>fengyunnas/fengyunnas</Repository>
+  <Registry>https://hub.docker.com/r/fengyunnas/fengyunnas/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/fengyunnas/fengyunnas/</Support>
+  <Project/>
+  <Overview>pt&#x3001;iyuu&#x3001;nas&#x7BA1;&#x7406;&#x52A9;&#x624B;&#xFF0C;&#x5CF0;&#x4E91;&#x52A9;&#x624B;&#x3002;QQ&#x7FA4;&#xFF1A;535235565  &#xD;
+ Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/26tongjibiao.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1627745834</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>pt&#x3001;iyuu&#x3001;nas&#x7BA1;&#x7406;&#x52A9;&#x624B;&#xFF0C;&#x5CF0;&#x4E91;&#x52A9;&#x624B;&#x3002;QQ&#x7FA4;&#xFF1A;535235565  &#xD;
+ Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8089</HostPort>
+        <ContainerPort>8089</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value>always</Value>
+      <Name>restart</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="port" Target="8089" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 8089" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
+  <Config Name="restart" Target="restart" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: restart" Type="Variable" Display="always" Required="false" Mask="false">always</Config>
+</Container>

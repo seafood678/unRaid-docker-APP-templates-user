@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>DoWechat</Name>
+  <Repository>zixia/wechat</Repository>
+  <Registry>https://hub.docker.com/r/zixia/wechat</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://www.github.com/huan/docker-wechat</Project>
+  <Overview>DoChat(&#x76D2;&#x88C5;&#x5FAE;&#x4FE1;) is a Dockerized WeChat(&#x5FAE;&#x4FE1;) PC Windows Client for Linux.&#xD;
+&#xD;
+WeChat PC will be started on your Linux desktop by running the following one-line command:&#xD;
+&#xD;
+curl -sL https://raw.githubusercontent.com/huan/docker-wechat/master/dochat.sh | bash&#xD;
+Just copy/paste the above one-line command to your terminal and press Enter. Then the WeChat PC should appear in your XWindows desktop shortly.&#xD;
+</Overview>
+  <Category>Network:Messenger Status:Stable</Category>
+  <WebUI>http://[ip]</WebUI>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/wechat(1).png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1635136831</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>DoChat(&#x76D2;&#x88C5;&#x5FAE;&#x4FE1;) is a Dockerized WeChat(&#x5FAE;&#x4FE1;) PC Windows Client for Linux.&#xD;
+&#xD;
+WeChat PC will be started on your Linux desktop by running the following one-line command:&#xD;
+&#xD;
+curl -sL https://raw.githubusercontent.com/huan/docker-wechat/master/dochat.sh | bash&#xD;
+Just copy/paste the above one-line command to your terminal and press Enter. Then the WeChat PC should appear in your XWindows desktop shortly.&#xD;
+</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/DoWechat/WeChat Files</HostDir>
+      <ContainerDir>/home/user/WeChat Files/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/DoWechat/Application Data/</HostDir>
+      <ContainerDir>/home/user/.wine/drive_c/users/user/Application Data/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/DoWechat/tmp/.X11-unix</HostDir>
+      <ContainerDir>/tmp/.X11-unix</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>@im=fcitx</Value>
+      <Name>XMODIFIERS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>fcitx</Value>
+      <Name>GTK_IM_MODULE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>fcitx</Value>
+      <Name>QT_IM_MODULE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1000</Value>
+      <Name>UID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>GID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>96</Value>
+      <Name>DOCHAT_DPI</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>DOCHAT_DEBUG</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="WeChat Files" Target="/home/user/WeChat Files/" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /home/user/WeChat Files/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/DoWechat/WeChat Files</Config>
+  <Config Name="Application Data" Target="/home/user/.wine/drive_c/users/user/Application Data/" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /home/user/.wine/drive_c/users/user/Application Data/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/DoWechat/Application Data/</Config>
+  <Config Name="Host Path 3" Target="/tmp/.X11-unix" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /tmp/.X11-unix" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/DoWechat/tmp/.X11-unix</Config>
+  <Config Name="XMODIFIERS" Target="XMODIFIERS" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: XMODIFIERS" Type="Variable" Display="always" Required="false" Mask="false">@im=fcitx</Config>
+  <Config Name="GTK_IM_MODULE" Target="GTK_IM_MODULE" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: GTK_IM_MODULE" Type="Variable" Display="always" Required="false" Mask="false">fcitx</Config>
+  <Config Name="QT_IM_MODULE" Target="QT_IM_MODULE" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: QT_IM_MODULE" Type="Variable" Display="always" Required="false" Mask="false">fcitx</Config>
+  <Config Name="PUID" Target="UID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: UID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="PGID" Target="GID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: GID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="DOCHAT_DPI" Target="DOCHAT_DPI" Default="" Mode="" Description="DPI&#9;Scale factor&#13;&#10;96&#9;100%&#13;&#10;120&#9;125%&#13;&#10;144&#9;150%&#13;&#10;192&#9;200%" Type="Variable" Display="always" Required="false" Mask="false">96</Config>
+  <Config Name="DOCHAT_DEBUG" Target="DOCHAT_DEBUG" Default="" Mode="" Description="true false" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+</Container>

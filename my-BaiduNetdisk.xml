@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>BaiduNetdisk</Name>
+  <Repository>johngong/baidunetdisk</Repository>
+  <Registry>https://hub.docker.com/r/johngong/baidunetdisk/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/johngong/baidunetdisk/</Support>
+  <Project/>
+  <Overview>&#x5B98;&#x65B9;&#x767E;&#x5EA6;&#x7F51;&#x76D8;&#x5BA2;&#x6237;&#x7A3F;VNC&#x7248;:(baidunetdisk:3.5.0)   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category/>
+  <WebUI>http://192.16.8.33:5400</WebUI>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/baiduyunpan.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1625750834</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#x5B98;&#x65B9;&#x767E;&#x5EA6;&#x7F51;&#x76D8;&#x5BA2;&#x6554;&#x7AEF;VNC&#x7248;:(baidunetdisk:3.5.0)   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>5400</HostPort>
+        <ContainerPort>5800</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>5500</HostPort>
+        <ContainerPort>5900</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/BaiduNetdisk/config/</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/baidunetdisk/</HostDir>
+      <ContainerDir>/config/baidunetdiskdownload</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>unless-stopped</Value>
+      <Name>restart</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="config" Target="/config" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/BaiduNetdisk/config/</Config>
+  <Config Name="download" Target="/config/baidunetdiskdownload" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /config/baidunetdiskdownload" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/baidunetdisk/</Config>
+  <Config Name="retstart" Target="restart" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: restart" Type="Variable" Display="always" Required="false" Mask="false">unless-stopped</Config>
+  <Config Name="port0" Target="5800" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 5800" Type="Port" Display="always" Required="false" Mask="false">5400</Config>
+  <Config Name="port1" Target="5900" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 5900" Type="Port" Display="always" Required="false" Mask="false">5500</Config>
+</Container>

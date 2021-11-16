@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>serarx</Name>
+  <Repository>searx/searx</Repository>
+  <Registry>https://hub.docker.com/r/searx/serarx/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/oldiy/serarx/</Support>
+  <Project>https://github.com/asciimoo/searx</Project>
+  <Overview>searx&#x79C1;&#x4EBA;&#x7684;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x5E73;&#x53F0;&#xFF0C;&#x53EF;&#x5C55;&#x73B0;Google/Bing&#x7B49;70&#x591A;&#x79CD;&#x641C;&#x7D22;&#x7F51;&#x7AD9;&#x7ED3;&#x679C;&#xFF0C;&#x9700;FQ&#x4F7F;&#x7528;&#xFF01;&#x2014;&#x2014;&#x652F;&#x6301;&#x7FA4;&#x6656;&#xFF0C;&#x5A01;&#x8054;&#x901A;&#x7B49;&#x4E00;&#x5207;X86&#x7CFB;&#x7EDF;docker&#x90E8;&#x7F72;   &#xD;
+How to update ?&#xD;
+Check the content of update.sh</Overview>
+  <Category/>
+  <WebUI>http://192.16.8.33:8888</WebUI>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/searchengine.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset>0,2,4</CPUset>
+  <DateInstalled>1635277373</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>searx&#x79C1;&#x4EBA;&#x7684;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x5E73;&#x53F0;&#xFF0C;&#x53EF;&#x5C55;&#x73B0;Google/Bing&#x7B49;70&#x591A;&#x79CD;&#x641C;&#x7D22;&#x7F51;&#x7AD9;&#x7ED3;&#x679C;&#xFF0C;&#x9700;FQ&#x4F7F;&#x7528;&#xFF01;&#x2014;&#x2014;&#x652F;&#x6301;&#x7FA4;&#x6656;&#xFF0C;&#x5A01;&#x8054;&#x901A;&#x7B49;&#x4E00;&#x5207;X86&#x7CFB;&#x7EDF;docker&#x90E8;&#x7F72;   &#xD;
+How to update ?&#xD;
+Check the content of update.sh</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8888</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>4041</HostPort>
+        <ContainerPort>4041</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/searx/config</HostDir>
+      <ContainerDir>/etc/searx</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="WebUI Port" Target="8080" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 8080" Type="Port" Display="always" Required="false" Mask="false">8888</Config>
+  <Config Name="config" Target="/etc/searx" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /etc/searx" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/searx/config</Config>
+  <Config Name="Filtron API Port" Target="4041" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 4041" Type="Port" Display="always" Required="false" Mask="false">4041</Config>
+</Container>

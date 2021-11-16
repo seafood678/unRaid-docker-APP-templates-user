@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>NginxProxy</Name>
+  <Repository>jc21/nginx-proxy-manager</Repository>
+  <Registry>https://hub.docker.com/r/jc21/nginx-proxy-manager</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/110245-support-nginx-proxy-manager-npm-official/</Support>
+  <Project>https://nginxproxymanager.com/</Project>
+  <Overview>Nginx Proxy Manager (NPM) allows adding proxy hosts through a password-protected multi-user WebUI. Add free Let's Encrypt SSL certificates to secure your web services. They are renewed by NPM automatically.&#xD;
+&#xD;
+Default login:&#xD;
+ad-min@example.com&#xD;
+&#xD;
+Password:&#xD;
+changeme</Overview>
+  <Category>Tools:Utilities Other: Network:Web Network:Proxy Network:Management Network:Other</Category>
+  <WebUI>http://[IP]:[PORT:1781]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/mgutt/unraid-docker-templates/main/mgutt/Nginx-Proxy-Manager-Official.xml</TemplateURL>
+  <Icon>https://nginxproxymanager.com/icon.png</Icon>
+  <ExtraParams>--memory=1G --no-healthcheck</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1628556848</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Nginx Proxy Manager (NPM) allows adding proxy hosts through a password-protected multi-user WebUI. Add free Let's Encrypt SSL certificates to secure your web services. They are renewed by NPM automatically.&#xD;
+&#xD;
+Default login:&#xD;
+ad-min@example.com&#xD;
+&#xD;
+Password:&#xD;
+changeme</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>1781</HostPort>
+        <ContainerPort>81</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>1780</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>1443</HostPort>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/Nginx-Proxy-Manager-Official/data</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/Nginx-Proxy-Manager-Official/letsencrypt</HostDir>
+      <ContainerDir>/etc/letsencrypt</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>/data/database.sqlite</Value>
+      <Name>DB_SQLITE_FILE</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="WebUI" Target="81" Default="" Mode="tcp" Description="Container Port: 81" Type="Port" Display="always" Required="false" Mask="false">1781</Config>
+  <Config Name="HTTP Port" Target="80" Default="" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">1780</Config>
+  <Config Name="HTTPS Port" Target="443" Default="" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="false" Mask="false">1443</Config>
+  <Config Name="Data" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/Nginx-Proxy-Manager-Official/data</Config>
+  <Config Name="Certificates" Target="/etc/letsencrypt" Default="" Mode="rw" Description="Container Path: /etc/letsencrypt" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/Nginx-Proxy-Manager-Official/letsencrypt</Config>
+  <Config Name="Host Key 1" Target="DB_SQLITE_FILE" Default="" Mode="" Description="Container Variable: DB_SQLITE_FILE" Type="Variable" Display="always" Required="false" Mask="false">/data/database.sqlite</Config>
+</Container>

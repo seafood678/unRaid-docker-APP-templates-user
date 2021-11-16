@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>udpxy</Name>
+  <Repository>dorftv/udpxy</Repository>
+  <Registry>https://hub.docker.com/r/dorftv/udpxy/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/dorftv/udpxy/</Support>
+  <Project/>
+  <Overview>udpxy is a UDP-to-HTTP multicast traffic relay daemon.   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/bear.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1635145672</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>udpxy is a UDP-to-HTTP multicast traffic relay daemon.   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data/>
+  <Environment/>
+  <Labels/>
+</Container>

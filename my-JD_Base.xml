@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>JD_Base</Name>
+  <Repository>afeirwu/jd</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>afeirwu/jd&#xD;
+noobx/jd:v3  5678&#xD;
+&#xD;
+&#x65B9;&#x6CD5;&#xD;
+ docker run -dit &#xD;
+    -v $PWD/jd/config:/jd/config &#xD;
+    -v $PWD/jd/log:/jd/log &#xD;
+    -p 5678:5678 &#xD;
+    -e ENABLE_HANGUP=true &#xD;
+    -e ENABLE_WEB_PANEL=true &#xD;
+    --name jd &#xD;
+    --hostname jd &#xD;
+    --restart always &#xD;
+    noobx/jd:gitee&#xD;
+&#x5982;&#x9700;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#xFF0C;&#x8BF7;&#x628A;$PWD&#x66F4;&#x6539;&#x4E3A;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x7136;&#x5219;&#x4E3A;&#x5F53;&#x524D;&#x76EE;&#x5F55;!! &#x6267;&#x884C;&#x4E0A;&#x9762;&#x547D;&#x4EE4;&#x4E4B;&#x540E;&#x5EFA;&#x8BAE;&#x6267;&#x884C;docker logs -f jd&#x67E5;&#x770B;&#x5B89;&#x88C5;&#x8FDB;&#x5EA6;&#xFF0C;&#x76F4;&#x5230;&#x51FA;&#x73B0;Welcome to Node.js v1x.x.0.&#x4EE3;&#x8868;&#x6210;&#x529F;&#xFF01; &#x5982;&#x9700;&#x6620;&#x5C04;&#x811A;&#x672C;&#x51FA;&#x6765;&#x76F4;&#x63A5;&#x5728;&#x4E0A;&#x9762;&#x52A0;&#x4E00;&#x884C;!&#xFF1A;&#xD;
+&#xD;
+-v $PWD/jd/scripts:/jd/scripts &#xD;
+node&#x57FA;&#x7840;&#x955C;&#x50CF;&#xD;
+&#xD;
+noobx/jd:gitee&#xD;
+&#x96C6;&#x6210;python&#x4E0E;node&#x955C;&#x50CF;&#xD;
+&#xD;
+noobx/jd:py&#xD;
+&#x547D;&#x4EE4;&#x2193;&#xD;
+&#x624B;&#x52A8; git pull &#x66F4;&#x65B0;&#x811A;&#x672C;&#xD;
+docker exec -it jd bash git_pull&#xD;
+&#x624B;&#x52A8;&#x5220;&#x9664;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x4EE5;&#x524D;&#x7684;&#x65E7;&#x65E5;&#x5FD7;&#xD;
+docker exec -it jd bash rm_log&#xD;
+&#x624B;&#x52A8;&#x5BFC;&#x51FA;&#x6240;&#x6709;&#x4E92;&#x52A9;&#x7801;&#xD;
+docker exec -it jd bash export_sharecodes&#xD;
+&#x624B;&#x52A8;&#x542F;&#x52A8;&#x6302;&#x673A;&#x7A0B;&#x5E8F;&#xFF08;&#x5BB9;&#x5668;&#x4F1A;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x7ACB;&#x5373;&#x542F;&#x52A8;&#x6302;&#x673A;&#x7A0B;&#x5E8F;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x60F3;&#x91CD;&#x542F;&#x6302;&#x673A;&#x7A0B;&#x5E8F;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x91CD;&#x542F;&#x5BB9;&#x5668;&#xFF0C;&#x800C;&#x4E0D;&#x91C7;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#xFF09;&#xD;
+docker exec -it jd bash jd hangup&#xD;
+&#x624B;&#x52A8;&#x6267;&#x884C;&#x8585;&#x7F8A;&#x6BDB;&#x811A;&#x672C;&#xFF0C;&#x7528;&#x6CD5;&#x5982;&#x4E0B;(&#x5176;&#x4E2D;-it&#x540E;&#x9762;&#x7684;jd&#x4E3A;&#x5BB9;&#x5668;&#x540D;&#xFF0C;bash&#x540E;&#x9762;&#x7684;jd&#x4E3A;&#x547D;&#x4EE4;&#x540D;&#xFF0C;xxx&#x4E3A;lxk0301&#x5927;&#x4F6C;&#x7684;&#x811A;&#x672C;&#x540D;&#x79F0;)&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x76F4;&#x63A5;&#x4EE5;node xxx.js&#x547D;&#x4EE4;&#x8FD0;&#x884C;&#xFF1A;&#xD;
+docker exec -it jd bash jd xxx      # &#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;&#x968F;&#x673A;&#x5EF6;&#x8FDF;&#x5E76;&#x4E14;&#x5F53;&#x65F6;&#x65F6;&#x95F4;&#x4E0D;&#x5728;0-2&#x3001;30-31&#x3001;59&#x5206;&#x5185;&#xFF0C;&#x5C06;&#x968F;&#x673A;&#x5EF6;&#x8FDF;&#x4E00;&#x5B9A;&#x79D2;&#x6570;&#xD;
+docker exec -it jd bash jd xxx now  # &#x65E0;&#x8BBA;&#x662F;&#x5426;&#x8BBE;&#x7F6E;&#x4E86;&#x968F;&#x673A;&#x5EF6;&#x8FDF;&#xFF0C;&#x5747;&#x7ACB;&#x5373;&#x8FD0;&#x884C;&#xD;
+Copy&#x81EA;&#x5B9A;&#x4E49;&#x811A;&#x672C;&#x5230;&#x5BB9;&#x5668;&#x76EE;&#x5F55;&#xD;
+docker cp /&#x5BBF;&#x4E3B;&#x673A;&#x4E0A;&#x811A;&#x672C;&#x5B58;&#x653E;&#x8DEF;&#x5F84;/test.js jd:/jd/scripts&#xD;
+&#x67E5;&#x770B;&#x521B;&#x5EFA;&#x65E5;&#x5FD7;&#xD;
+docker logs -f jd&#xD;
+&#x91CD;&#x7F6E;WEB&#x9762;&#x677F;&#x5BC6;&#x7801;&#xD;
+docker exec -it jd bash jd resetpwd&#xD;
+&#x67E5;&#x770B;&#x6302;&#x673A;&#x811A;&#x672C;&#x65E5;&#x5FD7;&#xD;
+docker exec -it jd pm2 monit`&#x6216;`docker exec -it jd pm2 logs&#xD;
+&#x91CD;&#x542F;&#x5BB9;&#x5668;&#xD;
+docker restart jd&#xD;
+&#x5982;&#x4F55;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x955C;&#x50CF;&#xFF01;&#xD;
+docker run -d &#xD;
+--name watchtower &#xD;
+--restart always &#xD;
+-v /var/run/docker.sock:/var/run/docker.sock &#xD;
+containrrr/watchtower &#xD;
+--cleanup&#xD;
+</Overview>
+  <Category/>
+  <WebUI>http://192.16.8.33:5678</WebUI>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1625631810</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>afeirwu/jd&#xD;
+noobx/jd:v3  5678&#xD;
+&#xD;
+&#x65B9;&#x6CD5;&#xD;
+ docker run -dit &#xD;
+    -v $PWD/jd/config:/jd/config &#xD;
+    -v $PWD/jd/log:/jd/log &#xD;
+    -p 5678:5678 &#xD;
+    -e ENABLE_HANGUP=true &#xD;
+    -e ENABLE_WEB_PANEL=true &#xD;
+    --name jd &#xD;
+    --hostname jd &#xD;
+    --restart always &#xD;
+    noobx/jd:gitee&#xD;
+&#x5982;&#x9700;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#xFF0C;&#x8BF7;&#x628A;$PWD&#x66F4;&#x6539;&#x4E3A;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x7136;&#x5219;&#x4E3A;&#x5F53;&#x524D;&#x76EE;&#x5F55;!! &#x6267;&#x884C;&#x4E0A;&#x9762;&#x547D;&#x4EE4;&#x4E4B;&#x540E;&#x5EFA;&#x8BAE;&#x6267;&#x884C;docker logs -f jd&#x67E5;&#x770B;&#x5B89;&#x88C5;&#x8FDB;&#x5EA6;&#xFF0C;&#x76F4;&#x5230;&#x51FA;&#x73B0;Welcome to Node.js v1x.x.0.&#x4EE3;&#x8868;&#x6210;&#x529F;&#xFF01; &#x5982;&#x9700;&#x6620;&#x5C04;&#x811A;&#x672C;&#x51FA;&#x6765;&#x76F4;&#x63A5;&#x5728;&#x4E0A;&#x9762;&#x52A0;&#x4E00;&#x884C;!&#xFF1A;&#xD;
+&#xD;
+-v $PWD/jd/scripts:/jd/scripts &#xD;
+node&#x57FA;&#x7840;&#x955C;&#x50CF;&#xD;
+&#xD;
+noobx/jd:gitee&#xD;
+&#x96C6;&#x6210;python&#x4E0E;node&#x955C;&#x50CF;&#xD;
+&#xD;
+noobx/jd:py&#xD;
+&#x547D;&#x4EE4;&#x2193;&#xD;
+&#x624B;&#x52A8; git pull &#x66F4;&#x65B0;&#x811A;&#x672C;&#xD;
+docker exec -it jd bash git_pull&#xD;
+&#x624B;&#x52A8;&#x5220;&#x9664;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x4EE5;&#x524D;&#x7684;&#x65E7;&#x65E5;&#x5FD7;&#xD;
+docker exec -it jd bash rm_log&#xD;
+&#x624B;&#x52A8;&#x5BFC;&#x51FA;&#x6240;&#x6709;&#x4E92;&#x52A9;&#x7801;&#xD;
+docker exec -it jd bash export_sharecodes&#xD;
+&#x624B;&#x52A8;&#x542F;&#x52A8;&#x6302;&#x673A;&#x7A0B;&#x5E8F;&#xFF08;&#x5BB9;&#x5668;&#x4F1A;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x7ACB;&#x5373;&#x542F;&#x52A8;&#x6302;&#x673A;&#x7A0B;&#x5E8F;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x60F3;&#x91CD;&#x542F;&#x6302;&#x673A;&#x7A0B;&#x5E8F;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x91CD;&#x542F;&#x5BB9;&#x5668;&#xFF0C;&#x800C;&#x4E0D;&#x91C7;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#xFF09;&#xD;
+docker exec -it jd bash jd hangup&#xD;
+&#x624B;&#x52A8;&#x6267;&#x884C;&#x8585;&#x7F8A;&#x6BDB;&#x811A;&#x672C;&#xFF0C;&#x7528;&#x6CD5;&#x5982;&#x4E0B;(&#x5176;&#x4E2D;-it&#x540E;&#x9762;&#x7684;jd&#x4E3A;&#x5BB9;&#x5668;&#x540D;&#xFF0C;bash&#x540E;&#x9762;&#x7684;jd&#x4E3A;&#x547D;&#x4EE4;&#x540D;&#xFF0C;xxx&#x4E3A;lxk0301&#x5927;&#x4F6C;&#x7684;&#x811A;&#x672C;&#x540D;&#x79F0;)&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x76F4;&#x63A5;&#x4EE5;node xxx.js&#x547D;&#x4EE4;&#x8FD0;&#x884C;&#xFF1A;&#xD;
+docker exec -it jd bash jd xxx      # &#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;&#x968F;&#x673A;&#x5EF6;&#x8FDF;&#x5E76;&#x4E14;&#x5F53;&#x65F6;&#x65F6;&#x95F4;&#x4E0D;&#x5728;0-2&#x3001;30-31&#x3001;59&#x5206;&#x5185;&#xFF0C;&#x5C06;&#x968F;&#x673A;&#x5EF6;&#x8FDF;&#x4E00;&#x5B9A;&#x79D2;&#x6570;&#xD;
+docker exec -it jd bash jd xxx now  # &#x65E0;&#x8BBA;&#x662F;&#x5426;&#x8BBE;&#x7F6E;&#x4E86;&#x968F;&#x673A;&#x5EF6;&#x8FDF;&#xFF0C;&#x5747;&#x7ACB;&#x5373;&#x8FD0;&#x884C;&#xD;
+Copy&#x81EA;&#x5B9A;&#x4E49;&#x811A;&#x672C;&#x5230;&#x5BB9;&#x5668;&#x76EE;&#x5F55;&#xD;
+docker cp /&#x5BBF;&#x4E3B;&#x673A;&#x4E0A;&#x811A;&#x672C;&#x5B58;&#x653E;&#x8DEF;&#x5F84;/test.js jd:/jd/scripts&#xD;
+&#x67E5;&#x770B;&#x521B;&#x5EFA;&#x65E5;&#x5FD7;&#xD;
+docker logs -f jd&#xD;
+&#x91CD;&#x7F6E;WEB&#x9762;&#x677F;&#x5BC6;&#x7801;&#xD;
+docker exec -it jd bash jd resetpwd&#xD;
+&#x67E5;&#x770B;&#x6302;&#x673A;&#x811A;&#x672C;&#x65E5;&#x5FD7;&#xD;
+docker exec -it jd pm2 monit`&#x6216;`docker exec -it jd pm2 logs&#xD;
+&#x91CD;&#x542F;&#x5BB9;&#x5668;&#xD;
+docker restart jd&#xD;
+&#x5982;&#x4F55;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x955C;&#x50CF;&#xFF01;&#xD;
+docker run -d &#xD;
+--name watchtower &#xD;
+--restart always &#xD;
+-v /var/run/docker.sock:/var/run/docker.sock &#xD;
+containrrr/watchtower &#xD;
+--cleanup&#xD;
+</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>5678</HostPort>
+        <ContainerPort>5678</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/JD_Base/scripts</HostDir>
+      <ContainerDir>/jd/scripts</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/JD_Base/config</HostDir>
+      <ContainerDir>/jd/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/JD_Base/log</HostDir>
+      <ContainerDir>/jd/log</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>false</Value>
+      <Name>ENABLE_HANGUP</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>ENABLE_WEB_PANEL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>always</Value>
+      <Name>restart</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="root folder" Target="/jd/scripts" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /jd/scripts" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/JD_Base/scripts</Config>
+  <Config Name="config path" Target="/jd/config" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /jd/config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/JD_Base/config</Config>
+  <Config Name="log path" Target="/jd/log" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /jd/log" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/JD_Base/log</Config>
+  <Config Name="ENABLE_HANGUP" Target="ENABLE_HANGUP" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: ENABLE_HANGUP" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="ENABLE_WEB_PANEL" Target="ENABLE_WEB_PANEL" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: ENABLE_WEB_PANEL" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="restart" Target="restart" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: restart" Type="Variable" Display="always" Required="false" Mask="false">always</Config>
+  <Config Name="Web port" Target="5678" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 5678" Type="Port" Display="always" Required="false" Mask="false">5678</Config>
+</Container>

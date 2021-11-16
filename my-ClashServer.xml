@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ClashServer</Name>
+  <Repository>dreamacro/clash</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>&#x3010;1&#x3011;docker run -d --name=clash -v "$PWD/config.yaml:/root/.config/clash/config.yaml" -p "7890:7890" -p "7891:7891" -p "7892:7892" -p "9090:9090" --restart=unless-stopped dreamacro/clash&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+</Overview>
+  <Category/>
+  <WebUI>http://192.16.8.33:9090/ui/</WebUI>
+  <TemplateURL/>
+  <Icon>https://maofun.com/wp-content/uploads/2020/02/logo2.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1625666497</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#x3010;1&#x3011;docker run -d --name=clash -v "$PWD/config.yaml:/root/.config/clash/config.yaml" -p "7890:7890" -p "7891:7891" -p "7892:7892" -p "9090:9090" --restart=unless-stopped dreamacro/clash&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>7890</HostPort>
+        <ContainerPort>7890</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>7891</HostPort>
+        <ContainerPort>7891</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>9090</HostPort>
+        <ContainerPort>9090</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>7892</HostPort>
+        <ContainerPort>7892</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/Clash_Server/config/</HostDir>
+      <ContainerDir>/root/.config/clash</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/Clash_Server/ui</HostDir>
+      <ContainerDir>/ui</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>14.8</Value>
+      <Name>secret</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>info|warning|error|debug|silent</Value>
+      <Name>log-level</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>unless-stopped</Value>
+      <Name>restart</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>allow-lan</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="port of HTTP" Target="7890" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 7890" Type="Port" Display="always" Required="false" Mask="false">7890</Config>
+  <Config Name="port of SOCKS5" Target="7891" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 7891" Type="Port" Display="always" Required="false" Mask="false">7891</Config>
+  <Config Name="RESTful API for clash &amp;amp; Panel" Target="9090" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 9090" Type="Port" Display="always" Required="false" Mask="false">9090</Config>
+  <Config Name="Secret for RESTful API (Optional)" Target="secret" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: secret" Type="Variable" Display="always" Required="false" Mask="false">14.8</Config>
+  <Config Name="log-level" Target="log-level" Default="info" Mode="" Description="&#x5BB9;&#x5668; Variable: log-level" Type="Variable" Display="always" Required="false" Mask="false">info|warning|error|debug|silent</Config>
+  <Config Name="config" Target="/root/.config/clash" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /.config/clash" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/Clash_Server/config/</Config>
+  <Config Name="redir port for Linux and macOS" Target="7892" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 7892" Type="Port" Display="always" Required="false" Mask="false">7892</Config>
+  <Config Name="restart" Target="restart" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: restart" Type="Variable" Display="always" Required="false" Mask="false">unless-stopped</Config>
+  <Config Name="allow-lan" Target="allow-lan" Default="" Mode="" Description="&#x8FD0;&#x884C;&#x5C40;&#x57DF;&#x7F51;&#x8BBF;&#x95EE;: allow-lan: true" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="UI" Target="/ui" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /ui" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/Clash_Server/ui</Config>
+</Container>

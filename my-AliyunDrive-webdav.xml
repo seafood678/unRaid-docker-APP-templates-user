@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>AliyunDrive-webdav</Name>
+  <Repository>messense/aliyundrive-webdav</Repository>
+  <Registry>https://hub.docker.com/r/messense/aliyundrive-webdav</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/messense/aliyundrive-webdav</Support>
+  <Project>https://github.com/messense/aliyundrive-webdav</Project>
+  <Overview>refresh_token&#xD;
+&#x767B;&#x5F55;&#x963F;&#x91CC;&#x4E91;&#x76D8;&#x650E;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177; -&amp;gt; Application -&amp;gt; Local Storage &#x4E2D;&#x7684; token &#x5B57;&#x6BB5;&#x4E2D;&#x627E;&#x5230;&#x3002;&#xD;
+&#xD;
+&#x547D;&#x4EE4;&#x884C;&#x7528;&#x6CD5;&#xD;
+aliyundrive-webdav --help&#xD;
+aliyundrive-webdav 0.1.19&#xD;
+&#xD;
+USAGE:&#xD;
+    aliyundrive-webdav [FLAGS] [OPTIONS] --refresh-token &amp;lt;refresh-token&amp;gt;&#xD;
+&#xD;
+FLAGS:&#xD;
+    -I, --auto-index    Automatically generate index.html&#xD;
+    -h, --help          Prints help information&#xD;
+    -V, --version       Prints version information&#xD;
+&#xD;
+OPTIONS:&#xD;
+    -W, --auth-password &amp;lt;auth-password&amp;gt;          WebDAV authentication password [env: WEBDAV_AUTH_PASSWORD=]&#xD;
+    -U, --auth-user &amp;lt;auth-user&amp;gt;                  WebDAV authentication username [env: WEBDAV_AUTH_USER=]&#xD;
+        --cache-size &amp;lt;cache-size&amp;gt;                Directory entries cache size [default: 1000]&#xD;
+        --host &amp;lt;host&amp;gt;                            Listen host [default: 127.0.0.1]&#xD;
+    -p, --port &amp;lt;port&amp;gt;                            Listen port [default: 8080]&#xD;
+    -S, --read-buffer-size &amp;lt;read-buffer-size&amp;gt;&#xD;
+            Read/download buffer size in bytes, defaults to 10MB [default: 10485760]&#xD;
+&#xD;
+    -r, --refresh-token &amp;lt;refresh-token&amp;gt;          Aliyun drive refresh token [env: REFRESH_TOKEN=]&#xD;
+&#xD;
+</Overview>
+  <Category>Cloud: Productivity: Tools: Status:Beta</Category>
+  <WebUI>http://192.14.8.33:5080</WebUI>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/cloudaliyundrive.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1633233056</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>refresh_token&#xD;
+&#x767B;&#x5F55;&#x963F;&#x91CC;&#x4E91;&#x76D8;&#x650E;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177; -&amp;gt; Application -&amp;gt; Local Storage &#x4E2D;&#x7684; token &#x5B57;&#x6BB5;&#x4E2D;&#x627E;&#x5230;&#x3002;&#xD;
+&#xD;
+&#x547D;&#x4EE4;&#x884C;&#x7528;&#x6CD5;&#xD;
+aliyundrive-webdav --help&#xD;
+aliyundrive-webdav 0.1.19&#xD;
+&#xD;
+USAGE:&#xD;
+    aliyundrive-webdav [FLAGS] [OPTIONS] --refresh-token &amp;lt;refresh-token&amp;gt;&#xD;
+&#xD;
+FLAGS:&#xD;
+    -I, --auto-index    Automatically generate index.html&#xD;
+    -h, --help          Prints help information&#xD;
+    -V, --version       Prints version information&#xD;
+&#xD;
+OPTIONS:&#xD;
+    -W, --auth-password &amp;lt;auth-password&amp;gt;          WebDAV authentication password [env: WEBDAV_AUTH_PASSWORD=]&#xD;
+    -U, --auth-user &amp;lt;auth-user&amp;gt;                  WebDAV authentication username [env: WEBDAV_AUTH_USER=]&#xD;
+        --cache-size &amp;lt;cache-size&amp;gt;                Directory entries cache size [default: 1000]&#xD;
+        --host &amp;lt;host&amp;gt;                            Listen host [default: 127.0.0.1]&#xD;
+    -p, --port &amp;lt;port&amp;gt;                            Listen port [default: 8080]&#xD;
+    -S, --read-buffer-size &amp;lt;read-buffer-size&amp;gt;&#xD;
+            Read/download buffer size in bytes, defaults to 10MB [default: 10485760]&#xD;
+&#xD;
+    -r, --refresh-token &amp;lt;refresh-token&amp;gt;          Aliyun drive refresh token [env: REFRESH_TOKEN=]&#xD;
+&#xD;
+</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>5080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value>55e1de9a8eab48d7a4d9f6785ac24cebe</Value>
+      <Name>REFRESH_TOKEN</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>14.8</Value>
+      <Name>WEBDAV_AUTH_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>14.8</Value>
+      <Name>WEBDAV_AUTH_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="port" Target="8080" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 8080" Type="Port" Display="always" Required="false" Mask="false">5080</Config>
+  <Config Name="REFRESH_TOKEN" Target="REFRESH_TOKEN" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: REFRESH_TOKEN" Type="Variable" Display="always" Required="false" Mask="false">55e1de9a8eab48d7a4d9778894ac24cebe</Config>
+  <Config Name="WEBDAV_AUTH_USER" Target="WEBDAV_AUTH_USER" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: WEBDAV_AUTH_USER" Type="Variable" Display="always" Required="false" Mask="false">14.8</Config>
+  <Config Name="WEBDAV_AUTH_PASSWORD" Target="WEBDAV_AUTH_PASSWORD" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: WEBDAV_AUTH_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">14.8</Config>
+</Container>

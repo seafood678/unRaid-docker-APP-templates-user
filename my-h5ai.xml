@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>h5ai</Name>
+  <Repository>bin20088/h5ai</Repository>
+  <Registry>https://hub.docker.com/r/bin20088/h5ai/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/bin20088/h5ai/</Support>
+  <Project/>
+  <Overview>&#x57FA;&#x4E8E;awesometic/docker-h5ai&#x6539;&#x7248;&#xFF0C;&#x9002;&#x7528;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x5E73;&#x53F0;&#x3002; almost applicable to most platforms   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category/>
+  <WebUI>http://192.16.8.33:66651</WebUI>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/H5AI.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset>0,1,2,3</CPUset>
+  <DateInstalled>1635136652</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#x57FA;&#x4E8E;awesometic/docker-h5ai&#x6539;&#x7248;&#xFF0C;&#x9002;&#x7528;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x5E73;&#x53F0;&#x3002; almost applicable to most platforms   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>66651</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/Media/</HostDir>
+      <ContainerDir>/h5ai</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/h5ai/config</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Asia/Shanghai</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>HTPASSWD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>ad-min</Value>
+      <Name>HTPASSWD_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>ad-min@ad-min</Value>
+      <Name>HTPASSWD_PW</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Asia/Shanghai</Config>
+  <Config Name="HTPASSWD" Target="HTPASSWD" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: HTPASSWD" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="HTPASSWD_USER" Target="HTPASSWD_USER" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: HTPASSWD_USER" Type="Variable" Display="always" Required="false" Mask="false">ad-min</Config>
+  <Config Name="HTPASSWD_PW" Target="HTPASSWD_PW" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: HTPASSWD_PW" Type="Variable" Display="always" Required="false" Mask="false">ad-min@ad-min</Config>
+  <Config Name="shared" Target="/h5ai" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /h5ai" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media/</Config>
+  <Config Name="config" Target="/config" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/h5ai/config</Config>
+  <Config Name="webport" Target="80" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 80" Type="Port" Display="always" Required="false" Mask="false">63351</Config>
+</Container>

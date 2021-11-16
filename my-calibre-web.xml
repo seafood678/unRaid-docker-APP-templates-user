@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Calibre-web</Name>
+  <Repository>technosoft2000/calibre-web</Repository>
+  <Registry>https://hub.docker.com/r/technosoft2000/calibre-web</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/technosoft2000/calibre-web</Support>
+  <Project>https://hub.docker.com/r/technosoft2000/calibre-web</Project>
+  <Overview/>
+  <Category>MediaApp:Books MediaServer:Books</Category>
+  <WebUI>http://192.16.8.33:7083</WebUI>
+  <TemplateURL/>
+  <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1631794844</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>7083</HostPort>
+        <ContainerPort>8083</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/Media/Books/</HostDir>
+      <ContainerDir>/calibre-web/books</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/calibre-web/app</HostDir>
+      <ContainerDir>/calibre-web/app</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/calibre-web/kindlegen</HostDir>
+      <ContainerDir>/calibre-web/kindlegen</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/calibre-web/config</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>true</Value>
+      <Name>USE_CONFIG_DIR</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>https://github.com/janeczku/calibre-web.git</Value>
+      <Name>APP_REPO</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>master</Value>
+      <Name>APP_BRANCH</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>SET_CONTAINER_TIMEZONE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Asia/Shanghai</Value>
+      <Name>CONTAINER_TIMEZONE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="books" Target="/calibre-web/books" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /books" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media/Books/</Config>
+  <Config Name="calibre-web-app" Target="/calibre-web/app" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /calibre-web/app" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/calibre-web/app</Config>
+  <Config Name="calibre-web-kindlege" Target="/calibre-web/kindlegen" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /calibre-web/kindlegen" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/calibre-web/kindlegen</Config>
+  <Config Name="calibre-web-config" Target="/config" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/calibre-web/config</Config>
+  <Config Name="USE_CONFIG_DIR" Target="USE_CONFIG_DIR" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: USE_CONFIG_DIR" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="APP_REPO" Target="APP_REPO" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: APP_REPO" Type="Variable" Display="always" Required="false" Mask="false">https://github.com/janeczku/calibre-web.git</Config>
+  <Config Name="APP_BRANCH" Target="APP_BRANCH" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: APP_BRANCH" Type="Variable" Display="always" Required="false" Mask="false">master</Config>
+  <Config Name="SET_CONTAINER_TIMEZONE" Target="SET_CONTAINER_TIMEZONE" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: SET_CONTAINER_TIMEZONE" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="CONTAINER_TIMEZONE" Target="CONTAINER_TIMEZONE" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: CONTAINER_TIMEZONE" Type="Variable" Display="always" Required="false" Mask="false">Asia/Shanghai</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+  <Config Name="HTTP PORT" Target="8083" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 8083" Type="Port" Display="always" Required="false" Mask="false">7083</Config>
+</Container>

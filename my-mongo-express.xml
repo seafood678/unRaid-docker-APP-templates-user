@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>mongo-express</Name>
+  <Repository>ulisses1478/mongo-express</Repository>
+  <Registry>https://registry.hub.docker.com/r/ulisses1478/mongo-express</Registry>
+  <Network>artipub-net</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>Web-based MongoDB ad-min interface, written with Node.js and express.</Overview>
+  <Category>Tools:Utilities</Category>
+  <WebUI>http://192.16.8.33:8081</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Ulisses1478/templates-unraid/master/mongo-express.xml</TemplateURL>
+  <Icon>https://d1q6f0aelx0por.cloudfront.net/product-logos/f80f66d3-d812-48e5-8d6f-e248b25e3dce-mongo-express.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1626400371</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Web-based MongoDB ad-min interface, written with Node.js and express.</Description>
+  <Networking>
+    <Mode>artipub-net</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8081</HostPort>
+        <ContainerPort>8081</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value>MongoDB</Value>
+      <Name>ME_CONFIG_MONGODB_SERVER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>root</Value>
+      <Name>ME_CONFIG_MONGODB_ad-minUSERNAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>root</Value>
+      <Name>ME_CONFIG_MONGODB_ad-minPASSWORD</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Mongo Container Name" Target="ME_CONFIG_MONGODB_SERVER" Default="" Mode="" Description="Container Variable: ME_CONFIG_MONGODB_SERVER" Type="Variable" Display="always" Required="false" Mask="false">MongoDB</Config>
+  <Config Name="Host Port 1" Target="8081" Default="" Mode="tcp" Description="Container Port: 8081" Type="Port" Display="always" Required="false" Mask="false">8081</Config>
+  <Config Name="USERNAME" Target="ME_CONFIG_MONGODB_ad-minUSERNAME" Default="" Mode="" Description="Container Variable: ME_CONFIG_BASICAUTH_USERNAME " Type="Variable" Display="always" Required="false" Mask="false">root</Config>
+  <Config Name="PASSWORD" Target="ME_CONFIG_MONGODB_ad-minPASSWORD" Default="" Mode="" Description="Container Variable: ME_CONFIG_BASICAUTH_PASSWORD " Type="Variable" Display="always" Required="false" Mask="false">root</Config>
+</Container>

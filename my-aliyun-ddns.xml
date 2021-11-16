@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>aliyun-ddns</Name>
+  <Repository>sanjusss/aliyun-ddns</Repository>
+  <Registry>https://hub.docker.com/r/sanjusss/aliyun-ddns/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/sanjusss/aliyun-ddns/</Support>
+  <Project/>
+  <Overview>&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;&#x963F;&#x91CC;&#x4E91;&#x89E3;&#x6790;&#x3002;&#x652F;&#x6301;x86&#x3001;ARM&#x3001;&#x591A;&#x57DF;&#x540D;&#x548C;ipv6   &#xD;
+2020&#x5E74;</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/dns-logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1635125127</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;&#x963F;&#x91CC;&#x4E91;&#x89E3;&#x6790;&#x3002;&#x652F;&#x6301;x86&#x3001;ARM&#x3001;&#x591A;&#x57DF;&#x540D;&#x548C;ipv6   &#xD;
+2020&#x5E74;</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value>LTAIxcmWT4S44wgj</Value>
+      <Name>AKID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>PKOiX56mVBOwl5mpm8TeucFe4rmN29</Value>
+      <Name>AKSCT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>mobile:nas.example.com,mobile:jellyfin.example.com,mobile:emby.example.com,mobile:qb.example.com,</Value>
+      <Name>DOMAIN</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>300</Value>
+      <Name>REDO</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>600</Value>
+      <Name>TTL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8</Value>
+      <Name>TIMEZON</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>A,AAAA</Value>
+      <Name>TYPE</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="AKID" Target="AKID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: AKID" Type="Variable" Display="always" Required="false" Mask="false">LTAIxcmWT444Pwgj</Config>
+  <Config Name="AKSCT" Target="AKSCT" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: AKSCT" Type="Variable" Display="always" Required="false" Mask="false">PKOiX56mVBOwl54448TeucFe4rmN29</Config>
+  <Config Name="DOMAIN" Target="DOMAIN" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: DOMAIN" Type="Variable" Display="always" Required="false" Mask="false">mobile:nas.example.com,mobile:jellyfin.example.com,mobile:emby.example.com,mobile:qb.example.com,</Config>
+  <Config Name="REDO" Target="REDO" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: REDO" Type="Variable" Display="always" Required="false" Mask="false">300</Config>
+  <Config Name="TTL" Target="TTL" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: TTL" Type="Variable" Display="always" Required="false" Mask="false">600</Config>
+  <Config Name="TIMEZON" Target="TIMEZON" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: TIMEZON" Type="Variable" Display="always" Required="false" Mask="false">8</Config>
+  <Config Name="TYPE" Target="TYPE" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: TYPE" Type="Variable" Display="always" Required="false" Mask="false">A,AAAA</Config>
+</Container>

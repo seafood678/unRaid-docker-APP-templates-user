@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>binhex-krusader</Name>
+  <Repository>binhex/arch-krusader</Repository>
+  <Registry>https://registry.hub.docker.com/r/binhex/arch-krusader/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://lime-technology.com/forums/topic/71764-support-binhex-krusader/</Support>
+  <Project>https://krusader.org/</Project>
+  <Overview>Krusader is an advanced orthodox file manager for KDE and other desktops in the Unix world. It is similar to the console-based GNU Midnight Commander, GNOME Commander for the GNOME desktop environment, or Total Commander for Windows, all of which can trace their paradigmatic features to the original Norton Commander for DOS. It supports extensive archive handling, mounted filesystem support, FTP, advanced search, viewer/editor, directory synchronisation, file content comparisons, batch renaming, etc.</Overview>
+  <Category>Productivity: Tools:Utilities</Category>
+  <WebUI>http://192.16.8.33:6080/vnc.html?resize=remote&amp;amp;host=[IP]&amp;amp;port=[PORT:6080]&amp;amp;autoconnect=1</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/krusader.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/krusader-icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1628515701</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Krusader is an advanced orthodox file manager for KDE and other desktops in the Unix world. It is similar to the console-based GNU Midnight Commander, GNOME Commander for the GNOME desktop environment, or Total Commander for Windows, all of which can trace their paradigmatic features to the original Norton Commander for DOS. It supports extensive archive handling, mounted filesystem support, FTP, advanced search, viewer/editor, directory synchronisation, file content comparisons, batch renaming, etc.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>6080</HostPort>
+        <ContainerPort>6080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user</HostDir>
+      <ContainerDir>/media</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/</HostDir>
+      <ContainerDir>/unraid</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/disks/</HostDir>
+      <ContainerDir>/unAssinged</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/binhex-krusader</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>/config/home/.config/krusader/tmp</Value>
+      <Name>TEMP_FOLDER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>&#x6587;&#x4EF6;&#x7BA1;&#x7406;&#x5668;</Value>
+      <Name>WEBPAGE_TITLE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>VNC_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>000</Value>
+      <Name>UMASK</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Port 1" Target="6080" Default="6080" Mode="tcp" Description="Container Port: 6080" Type="Port" Display="always" Required="true" Mask="false">6080</Config>
+  <Config Name="Host Path 2" Target="/media" Default="/mnt/user" Mode="rw" Description="Container Path: /media" Type="Path" Display="always" Required="true" Mask="false">/mnt/user</Config>
+  <Config Name="Key 1" Target="TEMP_FOLDER" Default="/config/home/.config/krusader/tmp" Mode="" Description="Container Variable: TEMP_FOLDER" Type="Variable" Display="always" Required="false" Mask="false">/config/home/.config/krusader/tmp</Config>
+  <Config Name="Key 2" Target="WEBPAGE_TITLE" Default="Tower" Mode="" Description="Container Variable: WEBPAGE_TITLE" Type="Variable" Display="always" Required="false" Mask="false">&#x6587;&#x4EF6;&#x7BA1;&#x7406;&#x5668;</Config>
+  <Config Name="Key 3" Target="VNC_PASSWORD" Default="" Mode="" Description="Container Variable: VNC_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Key 4" Target="UMASK" Default="000" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
+  <Config Name="Key 5" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="Key 6" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="Unraid Share Path" Target="/unraid" Default="/mnt/user/Docker" Mode="rw" Description="" Type="Path" Display="hidden" Required="false" Mask="false">/mnt/user/</Config>
+  <Config Name="unAssinged" Target="/unAssinged" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /UNASSIGNED" Type="Path" Display="always" Required="false" Mask="false">/mnt/disks/</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/binhex-krusader" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/binhex-krusader</Config>
+</Container>

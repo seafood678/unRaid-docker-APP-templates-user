@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>DOS-Game</Name>
+  <Repository>oldiy/dosgame-web-docker:latest</Repository>
+  <Registry>https://hub.docker.com/r/oldiy/dosgame-web-docker</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/rwv/chinese-dos-games</Project>
+  <Overview>Dos&#x6E38;&#x620F;&#x4E2D;&#x6587;&#x7248;webui&#xFF0C;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6D4F;&#x89C8;&#x5668;&#x5185;&#x73A9;dos&#x6E38;&#x620F;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x5305;&#x542B;40&#x51E0;&#x4E2A;&#x7ECF;&#x5178;&#x6E38;&#x620F;&#xFF01;&#x2014;&#x2014;&#x652F;&#x6301;&#x7FA4;&#x6656;&#xFF0C;&#x5A01;&#x8054;&#x901A;&#x7B49;&#x4E00;&#x5207;X86&#x7CFB;&#x7EDF;docker&#x90E8;&#x7F72;  </Overview>
+  <Category/>
+  <WebUI>http://192.16.8.33:262</WebUI>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/game.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset>1,3,5</CPUset>
+  <DateInstalled>1635256189</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Dos&#x6E38;&#x620F;&#x4E2D;&#x6587;&#x7248;webui&#xFF0C;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6D4F;&#x89C8;&#x5668;&#x5185;&#x73A9;dos&#x6E38;&#x620F;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x5305;&#x542B;40&#x51E0;&#x4E2A;&#x7ECF;&#x5178;&#x6E38;&#x620F;&#xFF01;&#x2014;&#x2014;&#x652F;&#x6301;&#x7FA4;&#x6656;&#xFF0C;&#x5A01;&#x8054;&#x901A;&#x7B49;&#x4E00;&#x5207;X86&#x7CFB;&#x7EDF;docker&#x90E8;&#x7F72;  </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>262</HostPort>
+        <ContainerPort>262</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/Media/Games/DOS-Game</HostDir>
+      <ContainerDir>/app/static/games</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="WebUI" Target="262" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 262" Type="Port" Display="always" Required="false" Mask="false">262</Config>
+  <Config Name="Host Path 1" Target="/app/static/games" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /app/static/games" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media/Games/DOS-Game</Config>
+</Container>

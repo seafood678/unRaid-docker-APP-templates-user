@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Jackett</Name>
+  <Repository>ghcr.io/linuxserver/jackett</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>ghcr.io/linuxserver/jackett</Overview>
+  <Category/>
+  <WebUI>http://192.16.8.33:9117</WebUI>
+  <TemplateURL/>
+  <Icon>http://cdn.onlinewebfonts.com/svg/download_472730.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1622467560</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>ghcr.io/linuxserver/jackett</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9117</HostPort>
+        <ContainerPort>9117</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/jackett/</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Movie/14.8/</HostDir>
+      <ContainerDir>/downloads</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Asia/Shanghai</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>AUTO_UPDATE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>unless-stopped</Value>
+      <Name>restart</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Asia/Shanghai</Config>
+  <Config Name="AUTO_UPDATE" Target="AUTO_UPDATE" Default="" Mode="" Description="Container Variable: AUTO_UPDATE" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/jackett/</Config>
+  <Config Name="downloads" Target="/downloads" Default="" Mode="rw" Description="Container Path: /downloads" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Movie/14.8/</Config>
+  <Config Name="port" Target="9117" Default="" Mode="tcp" Description="Container Port: 9117" Type="Port" Display="always" Required="false" Mask="false">9117</Config>
+  <Config Name="restart" Target="restart" Default="" Mode="" Description="Container Variable: restart" Type="Variable" Display="always" Required="false" Mask="false">unless-stopped</Config>
+</Container>

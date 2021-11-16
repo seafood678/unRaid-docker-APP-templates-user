@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Influxdb</Name>
+  <Repository>influxdb:latest</Repository>
+  <Registry>https://hub.docker.com/_/influxdb/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://lime-technology.com/forum/index.php?topic=51498.0</Support>
+  <Project>https://influxdata.com/</Project>
+  <Overview>InfluxDB is an open source time series database with no external dependencies. It's useful for recording metrics, events, and performing analytics.</Overview>
+  <Category>Network:Management Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:8083]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/atribe/unRAID-docker/master/influxdb.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/pootzko/InfluxData.Net/master/nuget-icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1626422306</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>InfluxDB is an open source time series database with no external dependencies. It's useful for recording metrics, events, and performing analytics.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8084</HostPort>
+        <ContainerPort>8083</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8086</HostPort>
+        <ContainerPort>8086</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/influxdb</HostDir>
+      <ContainerDir>/var/lib/influxdb</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Host Port 1" Target="8083" Default="8083" Mode="tcp" Description="Container Port: 8083" Type="Port" Display="always" Required="true" Mask="false">8084</Config>
+  <Config Name="Host Port 2" Target="8086" Default="8086" Mode="tcp" Description="Container Port: 8086" Type="Port" Display="always" Required="true" Mask="false">8086</Config>
+  <Config Name="Host Path 1" Target="/var/lib/influxdb" Default="/mnt/user/appdata/influxdb" Mode="rw" Description="Container Path: /var/lib/influxdb" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/influxdb</Config>
+</Container>

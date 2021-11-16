@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>clouddrive</Name>
+  <Repository>cloudnas/clouddrive</Repository>
+  <Registry>https://hub.docker.com/r/cloudnas/clouddrive/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://hub.docker.com/r/cloudnas/clouddrive/</Support>
+  <Project/>
+  <Overview>   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1630996546</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9798</HostPort>
+        <ContainerPort>9798</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/clouddrive-download/</HostDir>
+      <ContainerDir>/CloudNAS:shared</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/clouddrive/Config/</HostDir>
+      <ContainerDir>/Config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>FuseUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>FuseGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>unless-stopped</Value>
+      <Name>restart</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>privileged</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="FuseUID" Target="FuseUID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: FuseUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="FuseGID" Target="FuseGID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: FuseGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="CloudNAS:shared" Target="/CloudNAS:shared" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /CloudNAS:shared" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/clouddrive-download/</Config>
+  <Config Name="Config" Target="/Config" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /Config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/clouddrive/Config/</Config>
+  <Config Name="/dev/fuse" Target="" Default="" Mode="" Description="&#x5BB9;&#x5668; Device: " Type="Device" Display="always" Required="false" Mask="false">/dev/fuse</Config>
+  <Config Name="restart" Target="restart" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: restart" Type="Variable" Display="always" Required="false" Mask="false">unless-stopped</Config>
+  <Config Name="privileged" Target="privileged" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: privileged" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="ports" Target="9798" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 9798" Type="Port" Display="always" Required="false" Mask="false">9798</Config>
+</Container>

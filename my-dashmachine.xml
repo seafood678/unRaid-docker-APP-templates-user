@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>dashmachine</Name>
+  <Repository>rmountjoy/dashmachine:latest</Repository>
+  <Registry>https://hub.docker.com/r/rmountjoy/dashmachine/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/89502-support-a75g-repo/</Support>
+  <Project>https://hub.docker.com/r/rmountjoy/dashmachine/</Project>
+  <Overview>Another web application bookmark dashboard, with fun features.[br][br][b][u][span style='color: #ff9900;']Default user/password[/span][/u][/b][br]User: [B][u]ad-min[/B][/u][br]Password: [B][u]ad-min[/B][/u][/b]    </Overview>
+  <Category>Productivity: Network:Web</Category>
+  <WebUI>http://192.16.8.33:5011</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/A75G/docker-templates/master/templates/dashmachine.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/A75G/docker-templates/master/templates/icons/dashmachine.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset>0,1,2,3</CPUset>
+  <DateInstalled>1635953881</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Another web application bookmark dashboard, with fun features.[br][br][b][u][span style='color: #ff9900;']Default user/password[/span][/u][/b][br]User: [B][u]ad-min[/B][/u][br]Password: [B][u]ad-min[/B][/u][/b]    </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>5011</HostPort>
+        <ContainerPort>5000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/dashmachine/</HostDir>
+      <ContainerDir>/dashmachine/dashmachine/user_data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Port" Target="5000" Default="" Mode="tcp" Description="Port" Type="Port" Display="always" Required="false" Mask="false">5011</Config>
+  <Config Name="AppData" Target="/dashmachine/dashmachine/user_data" Default="" Mode="rw" Description="Container Path: /dashmachine/dashmachine/user_data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/dashmachine/</Config>
+</Container>

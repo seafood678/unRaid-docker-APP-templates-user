@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>esir-openwrt</Name>
+  <Repository>esirpg/buddha/sbin/init</Repository>
+  <Registry>https://hub.docker.com/r/esirpg/buddha</Registry>
+  <Network>br0</Network>
+  <MyIP>192.16.8.5</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://hub.docker.com/r/esirpg/buddha</Project>
+  <Overview>esirpg/buddha/sbin/init&#xD;
+&#xD;
+Buddha Version of OpenWrt, featuring bypassing GFW, Contains 6 main apps i.e. Luci-Clash / Luci-Openclash / SSR+ / VSSR / Passwall / Bypass. Support SS, SS-rust, SSR, V2ray, Xray, Trojan, Naiveproxy, Clash protocols, etc. And Samba KMS DDNS.&#xD;
+&#xD;
+Arch&#xFF1A;AMD64&#xD;
+&#xD;
+Video Tutorial available on Youtube Channel (in Mandarin)&#xFF1A;https://youtu.be/jXMgAz_GQxI</Overview>
+  <Category/>
+  <WebUI>http://192.16.8.5</WebUI>
+  <TemplateURL/>
+  <Icon>https://img1.baidu.com/it/u=3892277359,35345304&amp;amp;fm=26&amp;amp;fmt=auto&amp;amp;gp=0.jpg</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1631367778</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>esirpg/buddha/sbin/init&#xD;
+&#xD;
+Buddha Version of OpenWrt, featuring bypassing GFW, Contains 6 main apps i.e. Luci-Clash / Luci-Openclash / SSR+ / VSSR / Passwall / Bypass. Support SS, SS-rust, SSR, V2ray, Xray, Trojan, Naiveproxy, Clash protocols, etc. And Samba KMS DDNS.&#xD;
+&#xD;
+Arch&#xFF1A;AMD64&#xD;
+&#xD;
+Video Tutorial available on Youtube Channel (in Mandarin)&#xFF1A;https://youtu.be/jXMgAz_GQxI</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish/>
+  </Networking>
+  <Data/>
+  <Environment/>
+  <Labels/>
+</Container>

@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>cisco-anyconnect-vpn</Name>
+  <Repository>jetbrainsinfra/docker-anyconnect-vpn</Repository>
+  <Registry>https://hub.docker.com/r/jetbrainsinfra/docker-anyconnect-vpn</Registry>
+  <Network>none</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support/>
+  <Project>https://github.com/vladk1m0/docker-anyconnect-vpn</Project>
+  <Overview>How to use&#xD;
+0&#x3001;https://github.com/vladk1m0/docker-anyconnect-vpn&#xD;
+&#xD;
+1&#x3001;Build the Docker image:&#xD;
+&#xD;
+2&#x3001;&#x914D;&#x7F6E;&#x6587;&#x4EF6; Add .env file to set up VPN connection params:&#xD;
+&#xD;
+VPN_URL=&amp;lt;VPN gateway URL&amp;gt;&#xD;
+VPN_USER=&amp;lt;Username&amp;gt;&#xD;
+VPN_PASSWORD=&amp;lt;Password&amp;gt;&#xD;
+VPN_OPTIONS=--protocol=&amp;lt;Protocol&amp;gt; &#xD;
+            --authgroup=&amp;lt;VPN group&amp;gt; &#xD;
+            --servercert=&amp;lt;VPN server TLS certificate fingerprint pin-sha256 type&amp;gt; &#xD;
+#OPTIONS&#x53C2;&#x6570;&#x8BE6;&#x7EC6;&#x770B;&#xFF1A;https://www.infradead.org/openconnect/manual.html&#xD;
+# To generate pin-sha256 fingerprint you can use openssl:&#xD;
+# openssl s_client -showcerts -connect $VPN_HOST:443 &amp;lt;/dev/null 2&amp;gt;/dev/null | openssl x509 -outform der | openssl dgst -sha256 -binary | openssl enc -base64&#xD;
+#&#xD;
+# When using multi-factor authentication with TOTP add additional options:&#xD;
+            --timestamp --token-mode=totp --token-secret=&amp;lt;TOTP secret&amp;gt;&#xD;
+# To expose VPN service ports outside Docker container add the group of environment variables for each VPN service:&#xD;
+HOST_PORT_1=&amp;lt;Host port for service 1&amp;gt;&#xD;
+VPN_SERVICE_HOST_PORT_1=&amp;lt;VPN service 1 endpoint ip:port&amp;gt;&#xD;
+#...&#xD;
+# HOST_PORT_N=&amp;lt;Host port for service N&amp;gt;&#xD;
+# VPN_SERVICE_HOST_PORT_N=&amp;lt;VPN service N endpoint ip:port&amp;gt;&#xD;
+Don't use quotes around the values!&#xD;
+OPTIONS&#x53C2;&#x6570;&#x8BE6;&#x7EC6;&#x770B;&#xFF0C;&#x5305;&#x62EC;&#x52A8;&#x6001;&#x5BC6;&#x7801;&#x7B49;&#xFF1A;https://www.infradead.org/openconnect/manual.html&#xD;
+&#xFF01;&#xFF01;&#xFF01;[color:red]See the openconnect documentation for available options.[/color]&#xD;
+&#xD;
+3&#x3001;&#x8DEF;&#x7531;&#x5668;&#x8BB0;&#x5F97;&#x8BBE;&#x7F6E;&#x7AEF;&#x53E3;&#x8F6C;&#x53D1;</Overview>
+  <Category/>
+  <WebUI>http://192.16.8.55:4443</WebUI>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/Cisco.png</Icon>
+  <ExtraParams>--restart=unless-stopped --cap-add=NET_ad-min --security-opt="label:disable"</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1635137400</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>How to use&#xD;
+0&#x3001;https://github.com/vladk1m0/docker-anyconnect-vpn&#xD;
+&#xD;
+1&#x3001;Build the Docker image:&#xD;
+&#xD;
+2&#x3001;&#x914D;&#x7F6E;&#x6587;&#x4EF6; Add .env file to set up VPN connection params:&#xD;
+&#xD;
+VPN_URL=&amp;lt;VPN gateway URL&amp;gt;&#xD;
+VPN_USER=&amp;lt;Username&amp;gt;&#xD;
+VPN_PASSWORD=&amp;lt;Password&amp;gt;&#xD;
+VPN_OPTIONS=--protocol=&amp;lt;Protocol&amp;gt; &#xD;
+            --authgroup=&amp;lt;VPN group&amp;gt; &#xD;
+            --servercert=&amp;lt;VPN server TLS certificate fingerprint pin-sha256 type&amp;gt; &#xD;
+#OPTIONS&#x53C2;&#x6570;&#x8BE6;&#x7EC6;&#x770B;&#xFF1A;https://www.infradead.org/openconnect/manual.html&#xD;
+# To generate pin-sha256 fingerprint you can use openssl:&#xD;
+# openssl s_client -showcerts -connect $VPN_HOST:443 &amp;lt;/dev/null 2&amp;gt;/dev/null | openssl x509 -outform der | openssl dgst -sha256 -binary | openssl enc -base64&#xD;
+#&#xD;
+# When using multi-factor authentication with TOTP add additional options:&#xD;
+            --timestamp --token-mode=totp --token-secret=&amp;lt;TOTP secret&amp;gt;&#xD;
+# To expose VPN service ports outside Docker container add the group of environment variables for each VPN service:&#xD;
+HOST_PORT_1=&amp;lt;Host port for service 1&amp;gt;&#xD;
+VPN_SERVICE_HOST_PORT_1=&amp;lt;VPN service 1 endpoint ip:port&amp;gt;&#xD;
+#...&#xD;
+# HOST_PORT_N=&amp;lt;Host port for service N&amp;gt;&#xD;
+# VPN_SERVICE_HOST_PORT_N=&amp;lt;VPN service N endpoint ip:port&amp;gt;&#xD;
+Don't use quotes around the values!&#xD;
+OPTIONS&#x53C2;&#x6570;&#x8BE6;&#x7EC6;&#x770B;&#xFF0C;&#x5305;&#x62EC;&#x52A8;&#x6001;&#x5BC6;&#x7801;&#x7B49;&#xFF1A;https://www.infradead.org/openconnect/manual.html&#xD;
+&#xFF01;&#xFF01;&#xFF01;[color:red]See the openconnect documentation for available options.[/color]&#xD;
+&#xD;
+3&#x3001;&#x8DEF;&#x7531;&#x5668;&#x8BB0;&#x5F97;&#x8BBE;&#x7F6E;&#x7AEF;&#x53E3;&#x8F6C;&#x53D1;</Description>
+  <Networking>
+    <Mode>none</Mode>
+    <Publish>
+      <Port>
+        <HostPort>4443</HostPort>
+        <ContainerPort/>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>4443</HostPort>
+        <ContainerPort/>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/cisco-anyconnect-vpn</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value/>
+      <Name>URL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>OPTIONS</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="port-TCP" Target="" Default="" Mode="tcp" Description="&#x901A;&#x4FE1;&#x7AEF;&#x53E3; &#13;&#10;eg.:&#13;&#10;- ${HOST_PORT_1}:${HOST_PORT_1}&#13;&#10;      #...&#13;&#10;      #- ${HOST_PORT_N}:${HOST_PORT_N}" Type="Port" Display="always" Required="false" Mask="false">4443</Config>
+  <Config Name="URL" Target="URL" Default="" Mode="" Description="&#x4F60;&#x7684; vpn URL&#xFF08;VPN_URL&#xFF09;" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="USER" Target="USER" Default="" Mode="" Description="&#x4F60;&#x7684;vpn &#x7528;&#x6237;&#x540D;(VPN_USER)" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="PASSWORD" Target="PASSWORD" Default="" Mode="" Description="&#x4F60;&#x7684;VPN &#x5BC6;&#x7801; (VPN_PASSWORD)" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="OPTIONS" Target="OPTIONS" Default="" Mode="" Description="&#x4F60;&#x7684;vpn options(VPN_OPTIONS)" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="C" Target="" Default="" Mode="udp" Description="port-udp" Type="Port" Display="always" Required="false" Mask="false">4443</Config>
+  <Config Name="config" Target="/config" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/cisco-anyconnect-vpn</Config>
+</Container>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Clash_Panel</Name>
+  <Repository>haishanh/yacd</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>docker run -p 1234:80 -d --rm haishanh/yacd&#xD;
+And then open http://localhost:1234 in browser</Overview>
+  <Category/>
+  <WebUI>http://192.16.8.33:1234</WebUI>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1625655162</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>docker run -p 1234:80 -d --rm haishanh/yacd&#xD;
+And then open http://localhost:1234 in browser</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>1234</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment/>
+  <Labels/>
+  <Config Name="port" Target="80" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 80" Type="Port" Display="always" Required="false" Mask="false">1234</Config>
+</Container>

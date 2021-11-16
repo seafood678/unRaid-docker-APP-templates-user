@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>MediaElch</Name>
+  <Repository>masonxx/mediaelch</Repository>
+  <Registry>https://hub.docker.com/repository/docker/masonxx/mediaelch</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/95577-support-mason-xx-mediaelch/</Support>
+  <Project>https://github.com/Komet/MediaElch</Project>
+  <Overview>&#xD;
+    Mediaelch is a Tool to manage your movie and show libary regarding the metadata and artwork.&#xD;
+  </Overview>
+  <Category>Tools: MediaApp:Video</Category>
+  <WebUI>http://[IP]:[PORT:7800]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/mason-xx/unraid-templates/master/mediaelch.xml</TemplateURL>
+  <Icon>https://www.kvibes.de/img/mediaelch/icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1631568349</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#xD;
+    Mediaelch is a Tool to manage your movie and show libary regarding the metadata and artwork.&#xD;
+  </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>7800</HostPort>
+        <ContainerPort>5800</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/mediaelch/config</HostDir>
+      <ContainerDir>/config/xdg/config/kvibes</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/</HostDir>
+      <ContainerDir>/movies</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/</HostDir>
+      <ContainerDir>/shows</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>000</Value>
+      <Name>UMASK</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Port 1" Target="5800" Default="5800" Mode="tcp" Description="Container Port: 5800" Type="Port" Display="always" Required="true" Mask="false">7800</Config>
+  <Config Name="Host Path 1" Target="/config/xdg/config/kvibes" Default="/mnt/cache/appdata/config" Mode="rw" Description="Container Path: /config/xdg/config/kvibes" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/mediaelch/config</Config>
+  <Config Name="Host Path 2" Target="/movies" Default="/mnt/user/" Mode="rw" Description="Container Path: /movies" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Media/</Config>
+  <Config Name="Host Path 3" Target="/shows" Default="/mnt/user" Mode="rw" Description="Container Path: /shows" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Media/</Config>
+  <Config Name="Key 1" Target="UMASK" Default="000" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
+  <Config Name="Key 2" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="Key 3" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+</Container>

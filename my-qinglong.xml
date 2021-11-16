@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Qinglong</Name>
+  <Repository>whyour/qinglong</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI>http://192.16.8.33:6700</WebUI>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/qinglong.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset>2,3,4,5</CPUset>
+  <DateInstalled>1636642149</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>6701</HostPort>
+        <ContainerPort>5701</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>6700</HostPort>
+        <ContainerPort>5700</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/config</HostDir>
+      <ContainerDir>/ql/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/log</HostDir>
+      <ContainerDir>/ql/log</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/scripts</HostDir>
+      <ContainerDir>/ql/scripts</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/jbot</HostDir>
+      <ContainerDir>/ql/jbot</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/ninja</HostDir>
+      <ContainerDir>/ql/ninja</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/raw</HostDir>
+      <ContainerDir>/ql/raw</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/db</HostDir>
+      <ContainerDir>/ql/db</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/repo</HostDir>
+      <ContainerDir>/ql/repo</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>true</Value>
+      <Name>ENABLE_HANGUP</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>ENABLE_WEB_PANEL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>ENABLE_WEB_JDC</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="ENABLE_HANGUP" Target="ENABLE_HANGUP" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: ENABLE_HANGUP" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="ENABLE_WEB_PANEL" Target="ENABLE_WEB_PANEL" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: ENABLE_WEB_PANEL" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="ENABLE_WEB_JDC" Target="ENABLE_WEB_JDC" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: ENABLE_WEB_JDC" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="config" Target="/ql/config" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /ql/config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/config</Config>
+  <Config Name="log" Target="/ql/log" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /ql/log" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/log</Config>
+  <Config Name="scripts" Target="/ql/scripts" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /ql/scripts" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/scripts</Config>
+  <Config Name="jbot" Target="/ql/jbot" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /ql/jbot" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/jbot</Config>
+  <Config Name="ninja" Target="/ql/ninja" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /ql/ninja" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/ninja</Config>
+  <Config Name="raw" Target="/ql/raw" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /ql/raw" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/raw</Config>
+  <Config Name="db" Target="/ql/db" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /ql/db" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/db</Config>
+  <Config Name="repo" Target="/ql/repo" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /ql/repo" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/repo</Config>
+  <Config Name="port2" Target="5701" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 5701" Type="Port" Display="always" Required="false" Mask="false">6701</Config>
+  <Config Name="5700" Target="5700" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: " Type="Port" Display="always" Required="false" Mask="false">6700</Config>
+</Container>

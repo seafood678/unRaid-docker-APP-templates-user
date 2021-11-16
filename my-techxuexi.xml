@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>techxuexi</Name>
+  <Repository>techxuexi/techxuexi-amd64:dev</Repository>
+  <Registry>https://hub.docker.com/r/techxuexi/techxuexi-amd64</Registry>
+  <Network>br0</Network>
+  <MyIP>192.16.8.188</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/TechXueXi/TechXueXi</Project>
+  <Overview>&#x5F3A;&#x56FD;&#x901A; &#x79D1;&#x6280;&#x5F3A;&#x56FD; &#x5B66;&#x4E60;&#x5F3A;&#x56FD; xuexiqiangguo &#x5168;&#x7F51;&#x6700;&#x597D;&#x7528;&#x5F00;&#x6E90;&#x7F51;&#x9875;&#x5B66;&#x4E60;&#x5F3A;&#x56FD;&#x52A9;&#x624B;&#xFF1A;TechXueXi &#xFF08;&#x61D2;&#x4EBA;&#x5237;&#x5206;&#x5DE5;&#x5177; &#x81EA;&#x52A8;&#x5B66;&#x4E60;&#xFF09;&#x6280;&#x672F;&#x5F3A;&#x56FD;&#xFF0C;&#x652F;&#x6301;&#x7B54;&#x9898;&#xFF0C;&#x652F;&#x6301; docker 45&#x5206;/&#x5929;&#xD;
+version: "3.6"&#xD;
+&#xD;
+services:&#xD;
+    techxuexi:&#xD;
+        image: techxuexi/techxuexi-amd64:dev&#xD;
+        container_name: techxuexi&#xD;
+        restart: unless-stopped&#xD;
+        volumes:&#xD;
+            - ./xuexi:/xuexi/user&#xD;
+        ports:&#xD;
+            - 9980:80&#xD;
+        shm_size: 2gb&#xD;
+        environment:&#xD;
+            - CRONTIME=5 22,0,8,9 * * *&#xD;
+            - Pushmode=6&#xD;
+            - ZhuanXiang=True&#xD;
+&#xD;
+        # --------------------------------&#xD;
+        # &#x6709;&#x516C;&#x7F51;IP&#x7684;&#x53EA;&#x8981;&#x4EE5;&#x4E0A;&#x5185;&#x5BB9;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x6CA1;&#x6709;&#x7528;&#xFF0C;&#x8FD0;&#x884C;&#x4E4B;&#x540E;&#x6253;&#x5F00;IP:9980&#x5373;&#x53EF;&#xD;
+            # &#x81EA;&#x5B9A;&#x4E49;&#x62C9;&#x53D6;&#x7248;&#x672C;&#xD;
+            # - Sourcepath=https://github.com/TechXueXi/TechXueXi.git&#xD;
+            # - pullbranche=developing&#xD;
+        # &#x672C;&#x5730;&#x7F16;&#x8BD1;&#x624D;&#x9700;&#x8981;&#xD;
+        # build:&#xD;
+        #     context: https://github.com/TechXueXi/TechXueXi.git&#xD;
+        #     dockerfile: Dockerfile.dev&#xD;
+        #     shm_size: 2gb&#xD;
+        #     args:&#xD;
+        #         - usesource=https://github.com/TechXueXi/TechXueXi.git&#xD;
+        #         - usebranche=developing&#xD;
+&#xD;
+    # &#x9700;&#x8981;&#x9700;&#x8981;&#x6620;&#x5C04;&#x516C;&#x7F51;&#x7684;&#x8BF7;&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x5185;&#x5BB9; &#xD;
+    # frpc:&#xD;
+    #     image: zctmdc/frp:Alpha&#xD;
+    #     # hostname: $hostname&#xD;
+    #     container_name: frpc&#xD;
+    #     restart: always&#xD;
+    #     # network_mode: host&#xD;
+    #     environment:&#xD;
+    #         - SUBDOMAIN_HOST=frp.zctmdc.cc&#xD;
+    #         - BIND_PORT=7001&#xD;
+    #         - TOKEN=12345678&#xD;
+    #         - admin_USER=ad-min&#xD;
+    #         - admin_PWD=ad-min&#xD;
+    #         - admin_PORT=7500&#xD;
+    #         - VHOST_HTTP_PORT=3080&#xD;
+    #     ports:&#xD;
+    #         - 7500:7500&#xD;
+    #     healthcheck:&#xD;
+    #         test: "/opt/healthcheck/healthcheck-frpc.sh"&#xD;
+    #         interval: 30s&#xD;
+    #         timeout: 10s&#xD;
+    #         retries: 3&#xD;
+    #     command: ["/usr/sbin/frpc", "-c", "/etc/frp/frpc.ini"]&#xD;
+    #     external_links:&#xD;
+    #         - techxuexi:techxuexi&#xD;
+    #     depends_on:&#xD;
+    #         - techxuexi&#xD;
+&#xD;
+#----------------------------------------------------------------&#xD;
+# &#x6253;&#x5F00;docker&#x6240;&#x5728; IP:7500 &#x6216;&#x8005;&#x6307;&#x5B9A; hostname &#x518D;&#x6253;&#x5F00;$hostname.frp.zctmdc.cc&#xD;
+# &#x7528;&#x4E0A;&#x9762;&#x7684; ad-min_PWD/ad-min_PWD&#x767B;&#x5F55;&#xD;
+# &#x70B9;&#x51FB;configure &#x7C98;&#x8D34;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;(&#x8BF7;&#x53D6;&#x6D88;&#x6CE8;&#x91CA;)  &#x5373;&#x53EF;&#x4F7F;&#x7528;~&#xD;
+&#xD;
+# &#x8BBF;&#x95EE;&#x5730;&#x5740;&#x4E3A; {{subdomain}}.frp.zctmdc.cc&#xD;
+# subdomain&#x70B9;&#x51FB;&#x4E0A;&#x9762;&#x63D0;&#x4EA4;&#x4E4B;&#x540E;&#x5237;&#x65B0;&#x9875;&#x9762;&#x5C31;&#x51FA;&#x6765;&#x4E86;&#xD;
+# &#x6216;&#x8005;&#x53EF;&#x4EE5;&#x67E5;&#x770B;[http_ad-min_UI]&#x4E0A;&#x9762;&#x4E00;&#x884C;&#x7684;user&#x503C;&#xD;
+#----------------------------------------------------------------&#xD;
+&#xD;
+# ; ------ ;&#xD;
+# [http_xuexi]&#xD;
+# type = http&#xD;
+# subdomain = {{ .Envs.HOSTNAME }}-web&#xD;
+# local_ip = techxuexi&#xD;
+# local_port = 80&#xD;
+&#xD;
+#-----------------------------requests-------------------------------------&#xD;
+#requests==2.26.0&#xD;
+#lxml==4.6.3&#xD;
+#colorama==0.4.1&#xD;
+#beautifulsoup4==4.9.3&#xD;
+#selenium==3.141.0&#xD;
+#pyhocon==0.3.58&#xD;
+#pyzbar==0.1.8&#xD;
+#pillow==8.2.0&#xD;
+#pyTelegramBotAPI==4.0.1&#xD;
+#gunicorn==20.1.0&#xD;
+#PySocks==1.7.1&#xD;
+#urllib3==1.26.7&#xD;
+&#xD;
+#Flask==1.1.2&#xD;
+#Flask_SQLAlchemy==2.5.1&#xD;
+#Flask_Cors==3.0.8&#xD;
+&#xD;
+#-----------------------------------------------&#xD;
+&#x4EA4;&#x6D41;&#x7FA4;&#x5730;&#x5740;&#x53CA;&#x8BF4;&#x660E;&#xD;
+&#xD;
+&#x91CD;&#x8981;&#x516C;&#x544A;&#xFF1A; &#x516C;&#x544A;&#x680F;&#xFF08;&#x56FD;&#x5185;&#x6253;&#x4E0D;&#x5F00;&#xFF09; || &#x516C;&#x544A;&#x680F;&#xFF08;&#x56FD;&#x5185;&#x53EF;&#x4EE5;&#x6253;&#x5F00;&#xFF09;&#xD;
+&#xD;
+&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#xFF1A; https://techxuexi.js.org/&#xD;
+&#xD;
+&#x6709;&#x7591;&#x95EE;&#xFF1F;&#xD;
+&#x9047;&#x5230;&#x95EE;&#x9898;&#xFF0C;&#x8BF7;&#x8BD5;&#x7740;&#x6309;&#x5982;&#x4E0B;&#x6B65;&#x9AA4;&#x89E3;&#x51B3;&#xFF1A;&#xD;
+&#xD;
+&#x4ED4;&#x7EC6;&#x9605;&#x8BFB;&#x8FC7; https://github.com/TechXueXi/TechXueXi/wiki &#x8BF4;&#x660E;&#xD;
+&#x67E5;&#x770B;/&#x641C;&#x7D22;&#x6240;&#x6709;&#x5DF2;&#x6709; issue&#xFF0C;&#x65E0;&#x8BBA;&#x662F;open&#x8FD8;&#x662F;close&#x7684;&#xD;
+&#x901A;&#x8FC7;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x641C;&#x7D22;&#xFF0C;&#x5C1D;&#x8BD5;&#x4E0D;&#x540C;&#x7684;&#x5173;&#x952E;&#x8BCD; www.google.com www.baidu.com&#xD;
+&#x5230;&#x63D0;&#x4F9B;&#x7684;&#x5728;&#x7EBF;&#x804A;&#x5929;&#x5BA4;&#x8BE2;&#x95EE; (&#x804A;&#x5929;&#x5BA4;&#x8BF4;&#x660E;&#xFF1A; https://github.com/TechXueXi/TechXueXi/issues/14 )&#xD;
+&#x63D0;&#x65B0; issue &#xFF0C;&#x5173;&#x6CE8;&#x90AE;&#x7BB1;&#x6709;&#x5173;&#x8FD9;&#x4E2A; issue &#x7684;&#x63D0;&#x9192;&#x3002;</Overview>
+  <Category/>
+  <WebUI>http://192.16.8.188</WebUI>
+  <TemplateURL/>
+  <Icon>https://www.xuexi.cn/lgpage/images/f6b99ba9b8314955d8dcf08b3ac85353.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset>2,3,4,5</CPUset>
+  <DateInstalled>1636371652</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#x5F3A;&#x56FD;&#x901A; &#x79D1;&#x6280;&#x5F3A;&#x56FD; &#x5B66;&#x4E60;&#x5F3A;&#x56FD; xuexiqiangguo &#x5168;&#x7F51;&#x6700;&#x597D;&#x7528;&#x5F00;&#x6E90;&#x7F51;&#x9875;&#x5B66;&#x4E60;&#x5F3A;&#x56FD;&#x52A9;&#x624B;&#xFF1A;TechXueXi &#xFF08;&#x61D2;&#x4EBA;&#x5237;&#x5206;&#x5DE5;&#x5177; &#x81EA;&#x52A8;&#x5B66;&#x4E60;&#xFF09;&#x6280;&#x672F;&#x5F3A;&#x56FD;&#xFF0C;&#x652F;&#x6301;&#x7B54;&#x9898;&#xFF0C;&#x652F;&#x6301; docker 45&#x5206;/&#x5929;&#xD;
+version: "3.6"&#xD;
+&#xD;
+services:&#xD;
+    techxuexi:&#xD;
+        image: techxuexi/techxuexi-amd64:dev&#xD;
+        container_name: techxuexi&#xD;
+        restart: unless-stopped&#xD;
+        volumes:&#xD;
+            - ./xuexi:/xuexi/user&#xD;
+        ports:&#xD;
+            - 9980:80&#xD;
+        shm_size: 2gb&#xD;
+        environment:&#xD;
+            - CRONTIME=5 22,0,8,9 * * *&#xD;
+            - Pushmode=6&#xD;
+            - ZhuanXiang=True&#xD;
+&#xD;
+        # --------------------------------&#xD;
+        # &#x6709;&#x516C;&#x7F51;IP&#x7684;&#x53EA;&#x8981;&#x4EE5;&#x4E0A;&#x5185;&#x5BB9;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x6CA1;&#x6709;&#x7528;&#xFF0C;&#x8FD0;&#x884C;&#x4E4B;&#x540E;&#x6253;&#x5F00;IP:9980&#x5373;&#x53EF;&#xD;
+            # &#x81EA;&#x5B9A;&#x4E49;&#x62C9;&#x53D6;&#x7248;&#x672C;&#xD;
+            # - Sourcepath=https://github.com/TechXueXi/TechXueXi.git&#xD;
+            # - pullbranche=developing&#xD;
+        # &#x672C;&#x5730;&#x7F16;&#x8BD1;&#x624D;&#x9700;&#x8981;&#xD;
+        # build:&#xD;
+        #     context: https://github.com/TechXueXi/TechXueXi.git&#xD;
+        #     dockerfile: Dockerfile.dev&#xD;
+        #     shm_size: 2gb&#xD;
+        #     args:&#xD;
+        #         - usesource=https://github.com/TechXueXi/TechXueXi.git&#xD;
+        #         - usebranche=developing&#xD;
+&#xD;
+    # &#x9700;&#x8981;&#x9700;&#x8981;&#x6620;&#x5C04;&#x516C;&#x7F51;&#x7684;&#x8BF7;&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x5185;&#x5BB9; &#xD;
+    # frpc:&#xD;
+    #     image: zctmdc/frp:Alpha&#xD;
+    #     # hostname: $hostname&#xD;
+    #     container_name: frpc&#xD;
+    #     restart: always&#xD;
+    #     # network_mode: host&#xD;
+    #     environment:&#xD;
+    #         - SUBDOMAIN_HOST=frp.zctmdc.cc&#xD;
+    #         - BIND_PORT=7001&#xD;
+    #         - TOKEN=12345678&#xD;
+    #         - admin_USER=admin&#xD;
+    #         - admin_PWD=admin&#xD;
+    #         - admin_PORT=7500&#xD;
+    #         - VHOST_HTTP_PORT=3080&#xD;
+    #     ports:&#xD;
+    #         - 7500:7500&#xD;
+    #     healthcheck:&#xD;
+    #         test: "/opt/healthcheck/healthcheck-frpc.sh"&#xD;
+    #         interval: 30s&#xD;
+    #         timeout: 10s&#xD;
+    #         retries: 3&#xD;
+    #     command: ["/usr/sbin/frpc", "-c", "/etc/frp/frpc.ini"]&#xD;
+    #     external_links:&#xD;
+    #         - techxuexi:techxuexi&#xD;
+    #     depends_on:&#xD;
+    #         - techxuexi&#xD;
+&#xD;
+#----------------------------------------------------------------&#xD;
+# &#x6253;&#x5F00;docker&#x6240;&#x5728; IP:7500 &#x6216;&#x8005;&#x6307;&#x5B9A; hostname &#x518D;&#x6253;&#x5F00;$hostname.frp.zctmdc.cc&#xD;
+# &#x7528;&#x4E0A;&#x9762;&#x7684; ad-min_PWD/ad-min_PWD&#x767B;&#x5F55;&#xD;
+# &#x70B9;&#x51FB;configure &#x7C98;&#x8D34;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;(&#x8BF7;&#x53D6;&#x6D88;&#x6CE8;&#x91CA;)  &#x5373;&#x53EF;&#x4F7F;&#x7528;~&#xD;
+&#xD;
+# &#x8BBF;&#x95EE;&#x5730;&#x5740;&#x4E3A; {{subdomain}}.frp.zctmdc.cc&#xD;
+# subdomain&#x70B9;&#x51FB;&#x4E0A;&#x9762;&#x63D0;&#x4EA4;&#x4E4B;&#x540E;&#x5237;&#x65B0;&#x9875;&#x9762;&#x5C31;&#x51FA;&#x6765;&#x4E86;&#xD;
+# &#x6216;&#x8005;&#x53EF;&#x4EE5;&#x67E5;&#x770B;[http_ad-min_UI]&#x4E0A;&#x9762;&#x4E00;&#x884C;&#x7684;user&#x503C;&#xD;
+#----------------------------------------------------------------&#xD;
+&#xD;
+# ; ------ ;&#xD;
+# [http_xuexi]&#xD;
+# type = http&#xD;
+# subdomain = {{ .Envs.HOSTNAME }}-web&#xD;
+# local_ip = techxuexi&#xD;
+# local_port = 80&#xD;
+&#xD;
+#-----------------------------requests-------------------------------------&#xD;
+#requests==2.26.0&#xD;
+#lxml==4.6.3&#xD;
+#colorama==0.4.1&#xD;
+#beautifulsoup4==4.9.3&#xD;
+#selenium==3.141.0&#xD;
+#pyhocon==0.3.58&#xD;
+#pyzbar==0.1.8&#xD;
+#pillow==8.2.0&#xD;
+#pyTelegramBotAPI==4.0.1&#xD;
+#gunicorn==20.1.0&#xD;
+#PySocks==1.7.1&#xD;
+#urllib3==1.26.7&#xD;
+&#xD;
+#Flask==1.1.2&#xD;
+#Flask_SQLAlchemy==2.5.1&#xD;
+#Flask_Cors==3.0.8&#xD;
+&#xD;
+#-----------------------------------------------&#xD;
+&#x4EA4;&#x6D41;&#x7FA4;&#x5730;&#x5740;&#x53CA;&#x8BF4;&#x660E;&#xD;
+&#xD;
+&#x91CD;&#x8981;&#x516C;&#x544A;&#xFF1A; &#x516C;&#x544A;&#x680F;&#xFF08;&#x56FD;&#x5185;&#x6253;&#x4E0D;&#x5F00;&#xFF09; || &#x516C;&#x544A;&#x680F;&#xFF08;&#x56FD;&#x5185;&#x53EF;&#x4EE5;&#x6253;&#x5F00;&#xFF09;&#xD;
+&#xD;
+&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#xFF1A; https://techxuexi.js.org/&#xD;
+&#xD;
+&#x6709;&#x7591;&#x95EE;&#xFF1F;&#xD;
+&#x9047;&#x5230;&#x95EE;&#x9898;&#xFF0C;&#x8BF7;&#x8BD5;&#x7740;&#x6309;&#x5982;&#x4E0B;&#x6B65;&#x9AA4;&#x89E3;&#x51B3;&#xFF1A;&#xD;
+&#xD;
+&#x4ED4;&#x7EC6;&#x9605;&#x8BFB;&#x8FC7; https://github.com/TechXueXi/TechXueXi/wiki &#x8BF4;&#x660E;&#xD;
+&#x67E5;&#x770B;/&#x641C;&#x7D22;&#x6240;&#x6709;&#x5DF2;&#x6709; issue&#xFF0C;&#x65E0;&#x8BBA;&#x662F;open&#x8FD8;&#x662F;close&#x7684;&#xD;
+&#x901A;&#x8FC7;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x641C;&#x7D22;&#xFF0C;&#x5C1D;&#x8BD5;&#x4E0D;&#x540C;&#x7684;&#x5173;&#x952E;&#x8BCD; www.google.com www.baidu.com&#xD;
+&#x5230;&#x63D0;&#x4F9B;&#x7684;&#x5728;&#x7EBF;&#x804A;&#x5929;&#x5BA4;&#x8BE2;&#x95EE; (&#x804A;&#x5929;&#x5BA4;&#x8BF4;&#x660E;&#xFF1A; https://github.com/TechXueXi/TechXueXi/issues/14 )&#xD;
+&#x63D0;&#x65B0; issue &#xFF0C;&#x5173;&#x6CE8;&#x90AE;&#x7BB1;&#x6709;&#x5173;&#x8FD9;&#x4E2A; issue &#x7684;&#x63D0;&#x9192;&#x3002;</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>80</HostPort>
+        <ContainerPort/>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/xuexiqiangguo/user/</HostDir>
+      <ContainerDir>/xuexi/user</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>2gb</Value>
+      <Name>shm_size</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>5 22,0,8,9 * * *</Value>
+      <Name>CRONTIME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>6</Value>
+      <Name>Pushmode</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>True</Value>
+      <Name>ZhuanXiang</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="USER" Target="/xuexi/user" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /xuexi/user" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/xuexiqiangguo/user/</Config>
+  <Config Name="&#x5185;&#x5B58;&#x9650;&#x5236;" Target="shm_size" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: shm_size" Type="Variable" Display="always" Required="false" Mask="false">2gb</Config>
+  <Config Name="CRONTIME" Target="CRONTIME" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: CRONTIME" Type="Variable" Display="always" Required="false" Mask="false">5 22,0,8,9 * * *</Config>
+  <Config Name="Pushmode" Target="Pushmode" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: Pushmode" Type="Variable" Display="always" Required="false" Mask="false">6</Config>
+  <Config Name="ZhuanXiang" Target="ZhuanXiang" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: ZhuanXiang" Type="Variable" Display="always" Required="false" Mask="false">True</Config>
+  <Config Name="WebUI" Target="" Default="80" Mode="tcp" Description="&#x5BB9;&#x5668; Port: " Type="Port" Display="always" Required="false" Mask="false">80</Config>
+</Container>

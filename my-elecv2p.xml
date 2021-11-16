@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>elecv2p</Name>
+  <Repository>elecv2/elecv2p</Repository>
+  <Registry>https://hub.docker.com/r/elecv2/elecv2p/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/elecv2/elecv2p/</Support>
+  <Project/>
+  <Overview>elecV2P &#x662F;&#x4E00;&#x6B3E;&#x57FA;&#x4E8E; NodeJS&#xFF0C;&#x53EF;&#x901A;&#x8FC7; JS &#x4FEE;&#x6539;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#xFF0C;&#x4EE5;&#x53CA;&#x5B9A;&#x65F6;&#x8FD0;&#x884C;&#x811A;&#x672C;&#x6216; SHELL &#x6307;&#x4EE4;&#x7684;&#x7F51;&#x7EDC;&#x5DE5;&#x5177;&#x3002;(TG &#x9891;&#x9053;: https://t.me/elecV2)   &#xD;
+&#x4F7F;&#x7528;&#x6559;&#x7A0B;&#xFF1A;&#xD;
+https://post.smzdm.com/p/amx7ngrp/&#xD;
+https://www.kejiwanjia.com/jiaocheng/zheteng/15588.html</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams>--restart=always</ExtraParams>
+  <PostArgs/>
+  <CPUset>3,4,5</CPUset>
+  <DateInstalled>1635833144</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>elecV2P &#x662F;&#x4E00;&#x6B3E;&#x57FA;&#x4E8E; NodeJS&#xFF0C;&#x53EF;&#x901A;&#x8FC7; JS &#x4FEE;&#x6539;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#xFF0C;&#x4EE5;&#x53CA;&#x5B9A;&#x65F6;&#x8FD0;&#x884C;&#x811A;&#x672C;&#x6216; SHELL &#x6307;&#x4EE4;&#x7684;&#x7F51;&#x7EDC;&#x5DE5;&#x5177;&#x3002;(TG &#x9891;&#x9053;: https://t.me/elecV2)   &#xD;
+&#x4F7F;&#x7528;&#x6559;&#x7A0B;&#xFF1A;&#xD;
+https://post.smzdm.com/p/amx7ngrp/&#xD;
+https://www.kejiwanjia.com/jiaocheng/zheteng/15588.html</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8101</HostPort>
+        <ContainerPort>8001</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8100</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8102</HostPort>
+        <ContainerPort>8002</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/elecV2P/Jsfiles</HostDir>
+      <ContainerDir>/usr/local/app/script/JSFile</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/elecV2P/script/Lists</HostDir>
+      <ContainerDir>/usr/local/app/script/Lists</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/elecV2P/script/Store</HostDir>
+      <ContainerDir>/usr/local/app/script/Store</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/elecV2P/script/Shell</HostDir>
+      <ContainerDir>/usr/local/app/script/Shell</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/elecV2P/rootCA</HostDir>
+      <ContainerDir>/usr/local/app/rootCA</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/elecV2P/efss</HostDir>
+      <ContainerDir>/usr/local/app/efss</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>Asia/Shanghai</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="JsFiles" Target="/usr/local/app/script/JSFile" Default="" Mode="rw" Description="&#x811A;&#x672C;&#x6587;&#x4EF6;&#x5939; &#x5BB9;&#x5668; Path: /usr/local/app/script/JSFile" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/elecV2P/Jsfiles</Config>
+  <Config Name="script-Lists" Target="/usr/local/app/script/Lists" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /usr/local/app/script/Lists" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/elecV2P/script/Lists</Config>
+  <Config Name="script-Store" Target="/usr/local/app/script/Store" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /usr/local/app/script/Store" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/elecV2P/script/Store</Config>
+  <Config Name="script-Shell" Target="/usr/local/app/script/Shell" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /usr/local/app/script/Shell" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/elecV2P/script/Shell</Config>
+  <Config Name="rootCA" Target="/usr/local/app/rootCA" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /usr/local/app/rootCA" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/elecV2P/rootCA</Config>
+  <Config Name="efss" Target="/usr/local/app/efss" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /usr/local/app/efss" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/elecV2P/efss</Config>
+  <Config Name="Port" Target="8001" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 8001" Type="Port" Display="always" Required="false" Mask="false">8101</Config>
+  <Config Name="WebUI" Target="80" Default="" Mode="tcp" Description="&#x5BB9;&#x5668;&#xFF1A;80 webUI &#x540E;&#x53F0;&#x7BA1;&#x7406;&#x754C;&#x9762;&#x3002;&#x6DFB;&#x52A0;&#x89C4;&#x5219;/JS &#x6587;&#x4EF6;&#x7BA1;&#x7406;/&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;/MITM &#x8BC1;&#x4E66; &#x7B49;" Type="Port" Display="always" Required="false" Mask="false">8100</Config>
+  <Config Name="WebUI" Target="8002" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 8002 &#x6293;&#x5305;+&#x8BC1;&#x4E66;&#x7684;&#x5B89;&#x88C5;,ANYPROXY &#x4EE3;&#x7406;&#x8BF7;&#x6C42;&#x67E5;&#x770B;&#x7AEF;&#x53E3;" Type="Port" Display="always" Required="false" Mask="false">8102</Config>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Asia/Shanghai</Config>
+</Container>

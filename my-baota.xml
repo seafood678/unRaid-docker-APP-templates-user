@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>baota</Name>
+  <Repository>pch18/baota</Repository>
+  <Registry/>
+  <Network>br0</Network>
+  <MyIP>192.16.8.22</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI>http://192.16.8.22:8888</WebUI>
+  <TemplateURL/>
+  <Icon>https://www.bt.cn/bbs/uc_server/data/avatar/000/00/00/01_avatar_small.jpg</Icon>
+  <ExtraParams>--privileged=true</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1624151134</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>5020</HostPort>
+        <ContainerPort>20</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>5021</HostPort>
+        <ContainerPort>21</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>5443</HostPort>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>5008</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>5028</HostPort>
+        <ContainerPort>888</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>5018</HostPort>
+        <ContainerPort>8888</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/bt/</HostDir>
+      <ContainerDir>/www</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/bt/wwwroot</HostDir>
+      <ContainerDir>/wwwroot</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="www" Target="/www" Default="" Mode="rw" Description="Container Path: /other" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/bt/</Config>
+  <Config Name="wwwroot" Target="/wwwroot" Default="" Mode="rw" Description="Container Path:/wwwroot" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/bt/wwwroot</Config>
+  <Config Name="20" Target="20" Default="" Mode="tcp" Description="Container Port: 20" Type="Port" Display="always" Required="false" Mask="false">5020</Config>
+  <Config Name="21" Target="21" Default="" Mode="tcp" Description="Container Port: 21" Type="Port" Display="always" Required="false" Mask="false">5021</Config>
+  <Config Name="443" Target="443" Default="" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="false" Mask="false">5443</Config>
+  <Config Name="80" Target="80" Default="" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">5008</Config>
+  <Config Name="phpmyad-min&#x7AEF;&#x53E3;888" Target="888" Default="" Mode="tcp" Description="Container Port: 888" Type="Port" Display="always" Required="false" Mask="false">5028</Config>
+  <Config Name="&#x5B9D;&#x5854;&#x9762;&#x677F;&#x7AEF;&#x53E3;8888" Target="8888" Default="" Mode="tcp" Description="Container Port: 8888" Type="Port" Display="always" Required="false" Mask="false">5018</Config>
+</Container>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ArticlePub</Name>
+  <Repository>tanliyuan123/artipub</Repository>
+  <Registry>https://hub.docker.com/r/tanliyuan123/artipub/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/tanliyuan123/artipub/</Support>
+  <Project/>
+  <Overview>&#x4E00;&#x6587;&#x591A;&#x53D1;  http://192.14.8.33:8000 &#x540E;&#x7AEF;   http://192.14.8.33:3000 &#x524D;&#x7AEF;</Overview>
+  <Category/>
+  <WebUI>http://192.14.8.33:8000</WebUI>
+  <TemplateURL/>
+  <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1623200206</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#x4E00;&#x6587;&#x591A;&#x53D1;  http://192.14.8.33:8000 &#x540E;&#x7AEF;   http://192.14.8.33:3000 &#x524D;&#x7AEF;</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8000</HostPort>
+        <ContainerPort>8000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>3000</HostPort>
+        <ContainerPort>3000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>27017</HostPort>
+        <ContainerPort>27017</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value>mongo</Value>
+      <Name>MONGO_HOST</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>http://192.14.8.33:3000</Value>
+      <Name>ARTIPUB_API_ADDRESS</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="frontend" Target="8000" Default="" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="false" Mask="false">8000</Config>
+  <Config Name="backend" Target="3000" Default="" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="false" Mask="false">3000</Config>
+  <Config Name="dataport" Target="27017" Default="" Mode="tcp" Description="Container Port: 27017" Type="Port" Display="always" Required="false" Mask="false">27017</Config>
+  <Config Name="MONGO_HOST" Target="MONGO_HOST" Default="" Mode="" Description="Container Variable: MONGO_HOST" Type="Variable" Display="always" Required="false" Mask="false">mongo</Config>
+  <Config Name="ARTIPUB_API_ADDRESS" Target="ARTIPUB_API_ADDRESS" Default="" Mode="" Description="Container Variable: ARTIPUB_API_ADDRESS" Type="Variable" Display="always" Required="false" Mask="false">http://192.14.8.33:3000</Config>
+</Container>

@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>QianDao</Name>
+  <Repository>asdaragon/qiandao</Repository>
+  <Registry>https://hub.docker.com/r/asdaragon/qiandao/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/asdaragon/qiandao/</Support>
+  <Project/>
+  <Overview>&#x57FA;&#x4E8E; binux/qiandao &#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x6DFB;&#x52A0;&#x5B8C;&#x5584;&#x529F;&#x80FD;   &#x4E00;&#x4E2A;&#x81EA;&#x52A8;&#x7B7E;&#x5230;&#x6846;&#x67B6; &#xD;
+&#xD;
+&#x6570;&#x636E;&#x5E93;&#x5907;&#x4EFD;&#x6307;&#x4EE4;&#xFF1A;&#xD;
+&#xD;
+docker cp &#x5BB9;&#x5668;&#x540D;:/usr/src/app/config/database.db . &#xD;
+&#x6570;&#x636E;&#x5E93;&#x6062;&#x590D;&#x6307;&#x4EE4;&#xFF1A;&#xD;
+&#xD;
+docker cp database.db &#x5BB9;&#x5668;&#x540D;:/usr/src/app/config/&#xD;
+&#xD;
+&#x4E0D;&#x517C;&#x5BB9;&#x65E7;&#x7248;&#x7684;&#x6570;&#x636E;&#x5E93;&#xFF0C; &#x65E7;&#x7248;&#x6570;&#x636E;&#x5E93;&#x5BFC;&#x5165;&#x4F1A;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#xFF0C;&#x65E7;&#x7248;&#x5C06;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;.&#xD;
+&#x4F7F;&#x7528;SQLite3&#x7684;&#xFF0C;&#x9ED8;&#x8BA4;&#x8DEF;&#x5F84;&#x6539;&#x4E3A;config&#x6587;&#x4EF6;&#x5939;&#x91CC;&#x9762;&#xFF0C;&#x65B9;&#x4FBF;&#x6302;&#x8F7D;&#x540E;&#x5907;&#x4EFD;&#x3002;&#x8BF7;&#x628A; database.db &#x653E;&#x5230; config &#x6587;&#x4EF6;&#x5939;&#x91CC;&#xD;
+&#xD;
+&#x6DFB;&#x52A0;&#x6A21;&#x677F;&#x8BA2;&#x9605;&#x529F;&#x80FD;&#xFF0C;&#x4ED3;&#x5E93;&#x5730;&#x5740;&#x5728;https://gitee.com/qiandao-today/templates &#x4E3B;&#x9875;&#x6253;&#x5F00;&#x516C;&#x5171;&#x6A21;&#x677F;&#x6309;&#x94AE;&#xFF0C;&#x70B9;&#x51FB;&#x8BA2;&#x9605;&#x540E;&#x81EA;&#x52A8;&#x5BFC;&#x5165;&#x6A21;&#x677F;&#xFF0C;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x786E;&#x8BA4;&#x4FDD;&#x5B58;</Overview>
+  <Category/>
+  <WebUI>http://192.16.8.33:12345</WebUI>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/qiandao.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1635145973</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#x57FA;&#x4E8E; binux/qiandao &#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x6DFB;&#x52A0;&#x5B8C;&#x5584;&#x529F;&#x80FD;   &#x4E00;&#x4E2A;&#x81EA;&#x52A8;&#x7B7E;&#x5230;&#x6846;&#x67B6; &#xD;
+&#xD;
+&#x6570;&#x636E;&#x5E93;&#x5907;&#x4EFD;&#x6307;&#x4EE4;&#xFF1A;&#xD;
+&#xD;
+docker cp &#x5BB9;&#x5668;&#x540D;:/usr/src/app/config/database.db . &#xD;
+&#x6570;&#x636E;&#x5E93;&#x6062;&#x590D;&#x6307;&#x4EE4;&#xFF1A;&#xD;
+&#xD;
+docker cp database.db &#x5BB9;&#x5668;&#x540D;:/usr/src/app/config/&#xD;
+&#xD;
+&#x4E0D;&#x517C;&#x5BB9;&#x65E7;&#x7248;&#x7684;&#x6570;&#x636E;&#x5E93;&#xFF0C; &#x65E7;&#x7248;&#x6570;&#x636E;&#x5E93;&#x5BFC;&#x5165;&#x4F1A;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#xFF0C;&#x65E7;&#x7248;&#x5C06;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;.&#xD;
+&#x4F7F;&#x7528;SQLite3&#x7684;&#xFF0C;&#x9ED8;&#x8BA4;&#x8DEF;&#x5F84;&#x6539;&#x4E3A;config&#x6587;&#x4EF6;&#x5939;&#x91CC;&#x9762;&#xFF0C;&#x65B9;&#x4FBF;&#x6302;&#x8F7D;&#x540E;&#x5907;&#x4EFD;&#x3002;&#x8BF7;&#x628A; database.db &#x653E;&#x5230; config &#x6587;&#x4EF6;&#x5939;&#x91CC;&#xD;
+&#xD;
+&#x6DFB;&#x52A0;&#x6A21;&#x677F;&#x8BA2;&#x9605;&#x529F;&#x80FD;&#xFF0C;&#x4ED3;&#x5E93;&#x5730;&#x5740;&#x5728;https://gitee.com/qiandao-today/templates &#x4E3B;&#x9875;&#x6253;&#x5F00;&#x516C;&#x5171;&#x6A21;&#x677F;&#x6309;&#x94AE;&#xFF0C;&#x70B9;&#x51FB;&#x8BA2;&#x9605;&#x540E;&#x81EA;&#x52A8;&#x5BFC;&#x5165;&#x6A21;&#x677F;&#xFF0C;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x786E;&#x8BA4;&#x4FDD;&#x5B58;</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8923</HostPort>
+        <ContainerPort>8923</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>12345</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/qiandao/</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>0.0.0.0</Value>
+      <Name>BIND</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>sqlite3</Value>
+      <Name>DB_TYPE</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="&#x76D1;&#x542C;&#x7AEF;&#x53E3;" Target="8923" Default="" Mode="tcp" Description="Container Port: 8923" Type="Port" Display="always" Required="false" Mask="false">8923</Config>
+  <Config Name="&#x76D1;&#x542C;&#x5730;&#x5740;" Target="BIND" Default="0.0.0.0" Mode="" Description="Container Variable: BIND" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0</Config>
+  <Config Name="DB_TYPE" Target="DB_TYPE" Default="" Mode="" Description="Container Variable: DB_TYPE" Type="Variable" Display="always" Required="false" Mask="false">sqlite3</Config>
+  <Config Name="config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/qiandao/</Config>
+  <Config Name="webUI" Target="80" Default="" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">12345</Config>
+</Container>

@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Chinesesubfinder</Name>
+  <Repository>allanpk716/chinesesubfinder:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>http://1581088.com/uploads/zimu.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1627686943</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/chinesesubtitle/config</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/Movie/</HostDir>
+      <ContainerDir>/media/14.8</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/chinesesubfinder/log</HostDir>
+      <ContainerDir>/app/Logs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/TVShows/</HostDir>
+      <ContainerDir>/media/TVShow</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Asia/Shanghai</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>unless-stopped</Value>
+      <Name>restart</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Asia/Shanghai</Config>
+  <Config Name="config" Target="/config" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/chinesesubtitle/config</Config>
+  <Config Name="&#x7535;&#x5F71;" Target="/media/14.8" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /media" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media/Movie/</Config>
+  <Config Name="restart" Target="restart" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: restart" Type="Variable" Display="always" Required="false" Mask="false">unless-stopped</Config>
+  <Config Name="log" Target="/app/Logs" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /app/Logs" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/chinesesubfinder/log</Config>
+  <Config Name="&#x8FDE;&#x7EED;&#x5267;" Target="/media/TVShow" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /media/TVShow" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media/TVShows/</Config>
+</Container>
